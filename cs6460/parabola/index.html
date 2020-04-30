@@ -139,7 +139,7 @@ title: Math, Sonification, Plots
                 // width: 800px;
                 // height: 600px;
                 position: relative;
-                // background: url('https://robert-bobkoskie/CS6460/images/ST_Circle.png');
+                // background: url('https://robert-bobkoskie/cs6460/images/ST_Circle.png');
                 // background-color: blue;
                 // background-color: black;
         }
@@ -272,7 +272,7 @@ title: Math, Sonification, Plots
     <!-- img src="\images\ST_Circle.png" title="Graph of a Circle w/o High Contrast" -->
     <div class="center fit myContainer">
         <img id="myFunction" class="center fit myContainer"
-            src="https://robert-bobkoskie/CS6460/images/ST_Neg_Parabola.png"
+            src="https://robert-bobkoskie/cs6460/images/ST_Neg_Parabola.png"
             title="Click on Image to [ Play > Pause || ] Sonification"
             onclick = "change(); play(playButton);"/>
 
@@ -280,7 +280,7 @@ title: Math, Sonification, Plots
 
     </div>
 
-        <audio id="audio" src="https://robert-bobkoskie/CS6460/sounds/parabola_neg.mp4"></audio>
+        <audio id="audio" src="https://robert-bobkoskie/cs6460/sounds/parabola_neg.mp4"></audio>
         <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
         <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
         <br>
@@ -290,8 +290,8 @@ title: Math, Sonification, Plots
         <script>
             var playButton = document.getElementById("playButton")
             function change() {
-                var img1 = "https://robert-bobkoskie/CS6460/images/ST_Neg_Parabola.png",
-                    img2 = "https://robert-bobkoskie/CS6460/images/HC_Neg_Parabola.png";
+                var img1 = "https://robert-bobkoskie/cs6460/images/ST_Neg_Parabola.png",
+                    img2 = "https://robert-bobkoskie/cs6460/images/HC_Neg_Parabola.png";
                 var imgElement = document.getElementById('myFunction');
                 imgElement.src = (imgElement.src === img1)? img2 : img1;
             }
@@ -302,15 +302,15 @@ title: Math, Sonification, Plots
                 document.getElementById("myAnimation").style.backgroundColor = "yellow";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
                 document.body.style.color = "yellow";
-                gtech.src = "https://robert-bobkoskie/CS6460/images/gtech_HCS.png";
-                plot.src = "https://robert-bobkoskie/CS6460/images/HC_Neg_Parabola.png";
+                gtech.src = "https://robert-bobkoskie/cs6460/images/gtech_HCS.png";
+                plot.src = "https://robert-bobkoskie/cs6460/images/HC_Neg_Parabola.png";
             }
             function setBG_White() {
                 document.getElementById("myAnimation").style.backgroundColor = "black";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
                 document.body.style.color = "black";
-                gtech.src = "https://robert-bobkoskie/CS6460/images/gtech.png";
-                plot.src = "https://robert-bobkoskie/CS6460/images/ST_Neg_Parabola.png";
+                gtech.src = "https://robert-bobkoskie/cs6460/images/gtech.png";
+                plot.src = "https://robert-bobkoskie/cs6460/images/ST_Neg_Parabola.png";
             }
         </script>
 
