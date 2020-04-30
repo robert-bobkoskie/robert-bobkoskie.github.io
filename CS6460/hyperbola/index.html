@@ -129,7 +129,7 @@ title: Math, Sonification, Plots
                 // width: 800px;
                 // height: 600px;
                 position: relative;
-                // background: url('https://rbobkoskie3.github.io/images/ST_Circle.png');
+                // background: url('https://robert-bobkoskie/CS6460/images/ST_Circle.png');
                 // background-color: blue;
                 // background-color: black;
         }
@@ -308,7 +308,7 @@ title: Math, Sonification, Plots
     <!-- img src="\images\ST_Circle.png" title="Graph of a Circle w/o High Contrast" -->
     <div class="center fit myContainer">
         <img id="myFunction" class="center fit myContainer"
-            src="https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png"
+            src="https://robert-bobkoskie/CS6460/images/ST_3D_Hyperbola.png"
             title="Click on Image to [ Play > Pause || ] Sonification"
             onclick = "change(); play(playButton);"/>
 
@@ -316,7 +316,7 @@ title: Math, Sonification, Plots
 
     </div>
 
-        <audio id="audio" src="https://rbobkoskie3.github.io/sounds/hyperbola.mp4"></audio>
+        <audio id="audio" src="https://robert-bobkoskie/CS6460/sounds/hyperbola.mp4"></audio>
         <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
         <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
         <br>
@@ -327,8 +327,8 @@ title: Math, Sonification, Plots
             var playButton = document.getElementById("playButton")
 
             function change() {
-                var img1 = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png",
-                    img2 = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
+                var img1 = "https://robert-bobkoskie/CS6460/images/ST_3D_Hyperbola.png",
+                    img2 = "https://robert-bobkoskie/CS6460/images/HC_3D_Hyperbola.png";
                 var imgElement = document.getElementById('myFunction');
                 imgElement.src = (imgElement.src === img1)? img2 : img1;
             }
@@ -339,15 +339,15 @@ title: Math, Sonification, Plots
                 document.getElementById("myAnimation").style.backgroundColor = "yellow";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
                 document.body.style.color = "yellow";
-                gtech.src = "https://rbobkoskie3.github.io/images/gtech_HCS.png";
-                plot.src = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
+                gtech.src = "https://robert-bobkoskie/CS6460/images/gtech_HCS.png";
+                plot.src = "https://robert-bobkoskie/CS6460/images/HC_3D_Hyperbola.png";
             }
             function setBG_White() {
                 document.getElementById("myAnimation").style.backgroundColor = "black";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
                 document.body.style.color = "black";
-                gtech.src = "https://rbobkoskie3.github.io/images/gtech.png";
-                plot.src = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png";
+                gtech.src = "https://robert-bobkoskie/CS6460/images/gtech.png";
+                plot.src = "https://robert-bobkoskie/CS6460/images/ST_3D_Hyperbola.png";
             }
         </script>
 
