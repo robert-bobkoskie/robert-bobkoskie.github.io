@@ -1,0 +1,113 @@
+---
+layout: default
+title: Math, Sonification, Plots
+---
+
+<head>
+        <style>
+        .button {
+                background-color: #4CAF50; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 4px 2px;
+                cursor: pointer;}
+                
+        div {
+                text-align: justify;
+                text-justify: inter-word;
+            }
+
+        .fit {  /* set relative picture size */
+                max-width: 100%;
+                max-height: 100%;
+             }
+        
+        .center {
+                display: block;
+                margin: auto;
+                }
+        </style>
+</head>
+
+<div class="circle_class">
+        <!-- img src="\images\ST_Circle.png" title="Graph of a Circle w/o High Contrast" -->
+        
+        <div><p>Click on Image to Toggle Between High Contrast <> Standard Contrast Settings for Image.</div></p>
+        <img class="center fit" src="https://rbobkoskie3.github.io/images/ST_Parabola.png"
+             title="Click on Image to Toggle Between High Contrast <> Standard Contrast" id="img_1" onclick = "change_1();"/>
+        <script>
+                function change_1() {
+                        var img1 = "https://rbobkoskie3.github.io/images/ST_Parabola.png",
+                            img2 = "https://rbobkoskie3.github.io/images/HC_Parabola.png";
+                        var imgElement = document.getElementById('img_1');
+                        imgElement.src = (imgElement.src === img1)? img2 : img1;
+                }
+        </script>
+
+        <input type="button" class="button" value="SONIFICATION"  onclick="play_1()">
+        <audio id="audio_1" src="https://rbobkoskie3.github.io/sounds/parabola_pos.mp4" ></audio>
+        
+        <script>
+                var isPlaying = false
+                function play_1() {
+                        var audio = document.getElementById("audio_1");
+                        audio.volume = 0.4;
+                        if (!isPlaying) {
+                                audio.play();
+                                isPlaying = true
+                        }
+                        else {
+                                if (!audio.ended) {
+                                    audio.pause();
+                                    isPlaying = false
+                                }
+                                else {
+                                    audio.play();
+                                    isPlaying = true
+                                }
+                        }
+                }
+        </script>
+
+        <img class="center fit" src="https://rbobkoskie3.github.io/images/ST_Neg_Parabola.png"
+             title="Click on Image to Toggle Between High Contrast <> Standard Contrast" id="img_2" onclick = "change_2();"/>
+        <script>
+                function change_2() {
+                        var img1 = "https://rbobkoskie3.github.io/images/ST_Neg_Parabola.png",
+                            img2 = "https://rbobkoskie3.github.io/images/HC_Neg_Parabola.png";
+                        var imgElement = document.getElementById('img_2');
+                        imgElement.src = (imgElement.src === img1)? img2 : img1;
+                }
+        </script>
+        
+        <input type="button" class="button" value="SONIFICATION"  onclick="play_2()">
+        <audio id="audio_2" src="https://rbobkoskie3.github.io/sounds/parabola_neg.mp4" ></audio>
+        
+        <script>
+                var isPlaying = false
+                function play_2() {
+                        var audio = document.getElementById("audio_2");
+                        audio.volume = 0.4;
+                        if (!isPlaying) {
+                                audio.play();
+                                isPlaying = true
+                        }
+                        else {
+                                if (!audio.ended) {
+                                    audio.pause();
+                                    isPlaying = false
+                                }
+                                else {
+                                    audio.play();
+                                    isPlaying = true
+                                }
+                        }
+                }
+        </script>
+</div>

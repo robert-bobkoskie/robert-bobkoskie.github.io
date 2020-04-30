@@ -1,0 +1,483 @@
+---
+layout: default
+title: Math, Sonification, Plots
+---
+
+<head>
+    <style>
+        .btn-group button {
+                background-color: #4CAF50; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                font-weight: bold;
+                padding: 10px 24px; /* Some padding */
+                cursor: pointer; /* Pointer/hand icon */
+                float: left; /* Float the buttons side by side */
+        }
+
+        .button {
+                background-color: #4CAF50; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 4px 2px;
+                cursor: pointer;
+        }
+
+        /* Add a background color on hover */
+        button:hover {
+                background-color: #3e8e41;
+        }
+
+        .volDec {
+            background-color: #8A2BE2; /* BlueViolet background */
+            color: white; /* White text */
+            width: 0;
+            height: 0;
+            // text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            // padding: 0px 5px;
+            margin-right: 8px;
+            border-top: 24px solid transparent;
+            border-right: 36px solid #000;
+            border-bottom: 24px solid transparent;
+        }
+
+        .volInc {
+            background-color: #8A2BE2; /* BlueViolet background */
+            color: white; /* White text */
+            width: 60;
+            height: 0;
+            // text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            border-top: 24px solid transparent;
+            border-left: 36px solid #000;
+            border-bottom: 24px solid transparent;
+        }
+
+        .play {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            // color: #FFFFFF;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0px 8px;
+            margin-right:16px;
+            // background: transparent;
+            box-sizing: border-box;
+            // width: 74px;
+            width: 74;
+            height: 74px;
+
+            // transition: 100ms all ease;
+            cursor: pointer;
+
+            border-color: transparent transparent transparent #202020;
+            border-style: solid;
+            border-width: 37px 0px 37px 60px;
+        }
+
+        .pause {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            // color: #FFFFFF;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0px 8px;
+            margin-right:16px;
+            // background: transparent;
+            box-sizing: border-box;
+            // width: 74px;
+            width: 74;
+            height: 74px;
+
+            // transition: 100ms all ease;
+            cursor: pointer;
+            
+            border-color: #202020;
+            border-style: double;
+            border-width: 0px 0px 0px 60px;
+        }
+
+        div {
+                text-align: justify;
+                text-justify: inter-word;
+        }
+
+        .fit {  /* set relative picture size */
+                max-width: 100%;
+                max-height: 100%;
+        }
+        
+        .center {
+                display: block;
+                margin: auto;
+        }
+
+        .myContainer {
+                width: 100%;
+                height: 100%;
+                // width: 800px;
+                // height: 600px;
+                position: relative;
+                // background: url('https://rbobkoskie3.github.io/images/ST_Circle.png');
+                // background-color: blue;
+                // background-color: black;
+        }
+
+        .floatButton {
+            width: 220px;
+            height: 100%;
+            // transform: scale(.5, .5);
+            // display:inline-block;
+            float:left;
+            // border: 3px solid #73AD21;
+        }
+
+        .floatWarning {
+            width:40%;
+            // width: 500px;
+            height: 200px;
+            display:inline-block;
+            // float:left;
+            // position:relative;
+            position:absolute;
+            overflow-y: scroll;
+            padding: 10px 10px 10px 10px;
+            border: 3px solid #73AD21;
+        }
+
+        #myAnimation {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                background-color: #555;
+                border-radius: 50%;
+
+                /*
+                 * Sets up the animation duration, timing-function (or easing)
+                 * and iteration-count. Ensure you use the appropriate vendor-specific 
+                 * prefixes as well as the official syntax for now. Remember, tools like 
+                 * CSS Please are your friends!
+                 */
+                // -webkit-animation: myOrbit 4s linear infinite; /* Chrome, Safari 5 */
+                //    -moz-animation: myOrbit 4s linear infinite; /* Firefox 5-15 */
+                //      -o-animation: myOrbit 4s linear infinite; /* Opera 12+ */
+                //         animation: myOrbit 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                                   * IE 10+, Safari 5 */
+
+                -webkit-animation-play-state:paused;
+                -moz-animation-play-state:paused;
+                -o-animation-play-state:paused;
+                animation-play-state:paused;
+
+                -webkit-animation-name: tracePlt;            /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 5s;              /* Safari 4.0 - 8.0 */
+                -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+                -webkit-animation-direction: normal;         /* Safari 4.0 - 8.0 */
+                -webkit-transition-timing-function: linear;  /* Safari 4.0 - 8.0 */
+
+                -moz-animation-name: tracePlt;
+                -moz-animation-duration: 5s;
+                -moz-animation-iteration-count: infinite;
+                -moz-animation-direction: normal;
+                -moz-transition-timing-function: linear;
+
+                -o-animation-name: tracePlt;
+                -o-animation-duration: 5s;
+                -o-animation-iteration-count: infinite;
+                -o-animation-direction: normal;
+                -o-transition-timing-function: linear;
+
+                animation-name: tracePlt;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+                // transition-timing-function: linear;
+                // transition-timing-function: cubic-bezier(0,0,0.58,1);
+                // transition-timing-function: ease;
+                animation-timing-function:linear;
+        }
+
+        /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes tracePlt {
+            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -webkit-transform:scale(1.5);}
+            15%  {top:35%; -webkit-transform:scale(3.0);}
+            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -webkit-transform:scale(1.5);}
+            25%  {-webkit-transform:scale(0.5);}
+            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -webkit-transform:scale(1.5);}
+            35%  {-webkit-transform:scale(2.0);}
+            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -webkit-transform:scale(1.5);}
+            45%  {-webkit-transform:scale(0.75);}
+            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -webkit-transform:scale(1.5);}
+            55%  {-webkit-transform:scale(2.0);}
+            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -webkit-transform:scale(1.5);}
+            65%  {-webkit-transform:scale(0.75);}
+            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -webkit-transform:scale(1.5);}
+            75%  {-webkit-transform:scale(3.0);}
+            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -webkit-transform:scale(1.5);}
+            85%  {-webkit-transform:scale(0.5);}
+            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -webkit-transform:scale(1.5);}
+            95%  {-webkit-transform:scale(3.5);}
+            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -webkit-transform:scale(1.0);}
+        }
+        @-moz-keyframes tracePlt {
+            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -moz-transform:scale(1.5);}
+            15%  {top:35%; -moz-transform:scale(3.0);}
+            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -moz-transform:scale(1.5);}
+            25%  {-moz-transform:scale(0.5);}
+            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -moz-transform:scale(1.5);}
+            35%  {-moz-transform:scale(2.0);}
+            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -moz-transform:scale(1.5);}
+            45%  {-moz-transform:scale(0.75);}
+            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -moz-transform:scale(1.5);}
+            55%  {-moz-transform:scale(2.0);}
+            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -moz-transform:scale(1.5);}
+            65%  {-moz-transform:scale(0.75);}
+            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -moz-transform:scale(1.5);}
+            75%  {-moz-transform:scale(3.0);}
+            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -moz-transform:scale(1.5);}
+            85%  {-moz-transform:scale(0.5);}
+            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -moz-transform:scale(1.5);}
+            95%  {-moz-transform:scale(3.5);}
+            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -moz-transform:scale(1.0);}
+        }
+        @-o-keyframes tracePlt {
+            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -o-transform:scale(1.5);}
+            15%  {top:35%; -o-transform:scale(3.0);}
+            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -o-transform:scale(1.5);}
+            25%  {-o-transform:scale(0.5);}
+            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -o-transform:scale(1.5);}
+            35%  {-o-transform:scale(2.0);}
+            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -o-transform:scale(1.5);}
+            45%  {-o-transform:scale(0.75);}
+            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -o-transform:scale(1.5);}
+            55%  {-o-transform:scale(2.0);}
+            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -o-transform:scale(1.5);}
+            65%  {-o-transform:scale(0.75);}
+            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -o-transform:scale(1.5);}
+            75%  {-o-transform:scale(3.0);}
+            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -o-transform:scale(1.5);}
+            85%  {-o-transform:scale(0.5);}
+            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -o-transform:scale(1.5);}
+            95%  {-o-transform:scale(3.5);}
+            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -o-transform:scale(1.0);}
+        }
+        /* Standard syntax */
+        @keyframes tracePlt {
+            0%   {left:50%; top:15%;}
+            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  transform:scale(1.5);}
+            15%  {top:35%; transform:scale(3.0);}
+            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); transform:scale(1.5);}
+            25%  {transform:scale(0.5);}
+            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  transform:scale(1.5);}
+            35%  {transform:scale(2.0);}
+            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); transform:scale(1.5);}
+            45%  {transform:scale(0.75);}
+            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  transform:scale(1.5);}
+            55%  {transform:scale(2.0);}
+            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); transform:scale(1.5);}
+            65%  {transform:scale(0.75);}
+            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  transform:scale(1.5);}
+            75%  {transform:scale(3.0);}
+            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); transform:scale(1.5);}
+            85%  {transform:scale(0.5);}
+            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  transform:scale(1.5);}
+            95%  {transform:scale(3.5);}
+            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); transform:scale(1.0);}
+        }
+
+        /*
+        // *********************************
+        // Set up the keyframes to actually describe the begining and end states of 
+        // the animation.  The browser will interpolate all the frames between these 
+        // points.  Again, remember your vendor-specific prefixes for now!
+
+        @-webkit-keyframes myOrbit {
+            from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @-moz-keyframes myOrbit {
+            from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @-o-keyframes myOrbit {
+            from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @keyframes myOrbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <h1>About the Project</h1>
+    <div><p>
+        This website is part of a human factors study to improve ergonomics for the visually impaired.
+        The concept originates from a
+        <a href="https://www.omscs.gatech.edu/cs-6460-educational-technology"
+        target="_blank">CS 6460: Educational Technology</a>
+        class project. In addition to this website, I have built a
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0ICzX_vJjHwATkwU86fbXTqOgTGyMJfLvh73lRyYgIZT9Xg/viewform"
+        target="_blank">survey</a>
+        to gather information on the High Contrast Settings and Sonification implemented on the website.
+    </p></div>
+    <br>
+    <div><p>
+        I encourage visitors to peruse the Math Plots: LINES, CIRCLES, PARABOLAS, HYPERBOLAS, and play with the
+        High Contrast Settings and Sonification. Please provide comments and suggestions, and following your visit, kindly take the
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0ICzX_vJjHwATkwU86fbXTqOgTGyMJfLvh73lRyYgIZT9Xg/viewform"
+        target="_blank">survey</a>.
+    </p></div>
+    <br>
+    <div><p>
+        The results from the survey will advance research for developing better technologies that improve 
+        accessibility to digital media by the visually impaired. This project will culminate with a 
+        <a href="/AssistiveTechnology_VisuallyImpaired.pdf"
+        target="_blank">paper</a>
+        commensurable for publication.
+    </p></div>
+    <br>
+
+    <!-- img class="center fit" src="\images\ST_3D_Hyperbola.png" title="Graph of a 3-Dimensional Hyperbola w/o High Contrast" -->
+    <div class="center fit myContainer">
+        <img id="myFunction" class="center fit myContainer"
+            src="https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png"
+            title="Click on Image to [ Play > Pause || ] Sonification"
+            onclick = "change(); play(playButton);"/>
+
+        <div id ="myAnimation"></div>
+
+    </div>
+
+        <audio id="audio" src="https://rbobkoskie3.github.io/sounds/hyperbola.mp4"></audio>
+        <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
+        <div class="floatButton">
+            <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
+            <br>
+            <button class="volDec" onclick="vol_dec()">-</button>
+            <button class="volInc" onclick="vol_inc()">+ VOLUME</button>
+        </div>
+        <div class="floatWarning">
+            <div><p>
+                !ALERT! Sonification uses sound: frequency, amplitude and timbre to convey 
+                information. It is advisable to adjust the volume on your device prior to 
+                playing the sonification for the plots. You can also adjust the volume
+                during play, either from your device, or the volume buttons for this application.
+                Note that the native browser on iPhone does not support volume control from the application.
+            </p></div>
+        </div>
+        <br style="clear:both" />
+        <br><br><br>
+
+        <script>
+            var playButton = document.getElementById("playButton")
+
+            function change() {
+                var img1 = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png",
+                    img2 = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
+                var imgElement = document.getElementById('myFunction');
+                imgElement.src = (imgElement.src === img1)? img2 : img1;
+            }
+
+            var gtech = document.getElementById("gtech");
+            var plot = document.getElementById("myFunction");
+            function setBG_Black() {
+                document.getElementById("myAnimation").style.backgroundColor = "yellow";
+                document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+                document.body.style.color = "yellow";
+                gtech.src = "https://rbobkoskie3.github.io/images/gtech_HCS.png";
+                plot.src = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
+            }
+            function setBG_White() {
+                document.getElementById("myAnimation").style.backgroundColor = "black";
+                document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+                document.body.style.color = "black";
+                gtech.src = "https://rbobkoskie3.github.io/images/gtech.png";
+                plot.src = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png";
+            }
+        </script>
+
+        <script>
+                var audio = document.getElementById("audio");
+                audio.volume = 0.4;
+                var isPlaying = false;
+
+                function vol_inc() {
+                        audio.volume += 0.1;
+                }
+
+                function vol_dec() {
+                        audio.volume -= 0.1;
+                }
+
+                function play(button) {
+                        var elem = document.getElementById("myAnimation");
+                        var newone = elem.cloneNode(true);
+                        var audio = document.getElementById("audio");
+                        // document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
+                        elem.style.animationDuration = audio.duration + "s";
+                        elem.style.oAnimationDuration = audio.duration + "s";
+                        elem.style.mozAnimationDuration = audio.duration + "s";
+                        elem.style.webkitAnimationDuration = audio.duration + "s";
+
+                        audio.onended = function() {
+                                elem.style.animationPlayState = 'paused';
+                                elem.style.oAnimationPlayState = 'paused';
+                                elem.style.mozAnimationPlayState = 'paused';
+                                elem.style.webkitAnimationPlayState = 'paused';
+                                elem.parentNode.replaceChild(newone, elem);
+
+                                // button.innerHTML = "PLAY";
+                                button.removeAttribute("class");
+                                button.setAttribute("class", "button");
+                                button.setAttribute("class", "play");
+                                isPlaying = false
+                        };
+                        if (!isPlaying) {
+                                audio.play();
+                                elem.style.webkitAnimationPlayState = 'running';
+                                // button.innerHTML = "PAUSE";
+                                button.removeAttribute("class");
+                                button.setAttribute("class", "button");
+                                button.setAttribute("class", "pause");
+                                isPlaying = true
+                        }
+                        else {
+                                if (!audio.ended) {
+                                    audio.pause();
+                                    elem.style.webkitAnimationPlayState = 'paused';
+                                    // button.innerHTML = "PLAY";
+                                    button.removeAttribute("class");
+                                    button.setAttribute("class", "button");
+                                    button.setAttribute("class", "play");
+                                    isPlaying = false
+                                }
+                                else {
+                                    audio.play();
+                                    elem.style.webkitAnimationPlayState = 'running';
+                                    // button.innerHTML = "PAUSE";
+                                    button.removeAttribute("class");
+                                    button.setAttribute("class", "button");
+                                    button.setAttribute("class", "pause");
+                                    isPlaying = true
+                                }
+                        }
+                }
+        </script>
+</body>

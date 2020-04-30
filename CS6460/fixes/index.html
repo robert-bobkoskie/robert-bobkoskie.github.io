@@ -1,0 +1,350 @@
+---
+layout: default
+title: Math, Sonification, Plots
+---
+
+<head>
+    <style>
+        .btn-group button {
+                background-color: #4CAF50; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                font-weight: bold;
+                padding: 10px 24px; /* Some padding */
+                cursor: pointer; /* Pointer/hand icon */
+                float: left; /* Float the buttons side by side */
+        }
+
+        .button {
+                background-color: #4CAF50; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 4px 2px;
+                cursor: pointer;
+        }
+
+        /* Add a background color on hover */
+        button:hover {
+                background-color: #3e8e41;
+        }
+
+        .volDec {
+            background-color: #8A2BE2; /* BlueViolet background */
+            color: white; /* White text */
+            width: 0;
+            height: 0;
+            // text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            // padding: 0px 5px;
+            margin-right: 8px;
+            border-top: 24px solid transparent;
+            border-right: 36px solid #000;
+            border-bottom: 24px solid transparent;
+        }
+
+        .volInc {
+            background-color: #8A2BE2; /* BlueViolet background */
+            color: white; /* White text */
+            width: 60;
+            height: 0;
+            // text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            border-top: 24px solid transparent;
+            border-left: 36px solid #000;
+            border-bottom: 24px solid transparent;
+        }
+
+        .play {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            // color: #FFFFFF;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0px 8px;
+            margin-right:16px;
+            // background: transparent;
+            box-sizing: border-box;
+            // width: 74px;
+            width: 74;
+            height: 74px;
+
+            // transition: 100ms all ease;
+            cursor: pointer;
+
+            border-color: transparent transparent transparent #202020;
+            border-style: solid;
+            border-width: 37px 0px 37px 60px;
+        }
+
+        .pause {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            // color: #FFFFFF;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0px 8px;
+            margin-right:16px;
+            // background: transparent;
+            box-sizing: border-box;
+            // width: 74px;
+            width: 74;
+            height: 74px;
+
+            // transition: 100ms all ease;
+            cursor: pointer;
+            
+            border-color: #202020;
+            border-style: double;
+            border-width: 0px 0px 0px 60px;
+        }
+
+        div {
+                text-align: justify;
+                text-justify: inter-word;
+        }
+
+        .fit {  /* set relative picture size */
+                max-width: 100%;
+                max-height: 100%;
+        }
+        
+        .center {
+                display: block;
+                margin: auto;
+        }
+
+        .myContainer {
+                width: 100%;
+                height: 100%;
+                // width: 800px;
+                // height: 600px;
+                position: relative;
+                // background: url('https://rbobkoskie3.github.io/images/ST_Circle.png');
+                background-color: blue;
+                // background-color: black;
+        }
+
+        #myAnimation {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                background-color: #555;
+                border-radius: 50%;
+
+                /*
+                 * Sets up the animation duration, timing-function (or easing)
+                 * and iteration-count. Ensure you use the appropriate vendor-specific 
+                 * prefixes as well as the official syntax for now. Remember, tools like 
+                 * CSS Please are your friends!
+                 */
+                // -webkit-animation: myOrbit 4s linear infinite; /* Chrome, Safari 5 */
+                //    -moz-animation: myOrbit 4s linear infinite; /* Firefox 5-15 */
+                //      -o-animation: myOrbit 4s linear infinite; /* Opera 12+ */
+                //         animation: myOrbit 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                                   * IE 10+, Safari 5 */
+
+                -webkit-animation-play-state:paused;
+                -moz-animation-play-state:paused;
+                -o-animation-play-state:paused;
+                animation-play-state:paused;
+
+                -webkit-animation-name: tracePlt;            /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 5s;              /* Safari 4.0 - 8.0 */
+                -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+                -webkit-animation-direction: normal;         /* Safari 4.0 - 8.0 */
+                -webkit-transition-timing-function: linear;  /* Safari 4.0 - 8.0 */
+
+                -moz-animation-name: tracePlt;
+                -moz-animation-duration: 5s;
+                -moz-animation-iteration-count: infinite;
+                -moz-animation-direction: normal;
+                -moz-transition-timing-function: linear;
+
+                -o-animation-name: tracePlt;
+                -o-animation-duration: 5s;
+                -o-animation-iteration-count: infinite;
+                -o-animation-direction: normal;
+                -o-transition-timing-function: linear;
+
+                animation-name: tracePlt;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+                transition-timing-function: linear;
+        }
+
+        /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes tracePlt {
+            0%   {left:20px; top:0px;}
+            100% {left:790px; top:600px;}
+        }
+        @-moz-keyframes tracePlt {
+            0%   {left:20px; top:0px;}
+            100% {left:790px; top:600px;}
+        }
+        @-o-keyframes tracePlt {
+            0%   {left:20px; top:0px;}
+            100% {left:790px; top:600px;}
+        }
+        /* Standard syntax */
+        @keyframes tracePlt {
+            0%   {left:20px; top:0px;}
+            100% {left:790px; top:600px;}
+        }
+
+        /*
+        // *********************************
+        // Set up the keyframes to actually describe the begining and end states of 
+        // the animation.  The browser will interpolate all the frames between these 
+        // points.  Again, remember your vendor-specific prefixes for now!
+
+        @-webkit-keyframes myOrbit {
+            from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @-moz-keyframes myOrbit {
+            from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @-o-keyframes myOrbit {
+            from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        @keyframes myOrbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <nav><ul>
+        <li><a href="." target="_self">NEG SLOPE</a></li>
+        <li><a href="/line/linePosSlope.html" target="_self">POS SLOPE</a></li>
+        <li><a href="/parabola" target="_self">ZERO SLOPE</a></li>
+    </ul></nav>
+
+    <!-- img src="\images\ST_Circle.png" title="Graph of a Circle w/o High Contrast" -->
+    <div class="center fit myContainer">
+        <img id="lineNeg" class="center fit myContainer" src="https://rbobkoskie3.github.io/images/ST_Neg_Line.png"
+             title="Click on Image to Toggle Between High Contrast <> Standard Contrast" onclick = "change();"/>
+
+        <script>
+            function change() {
+                var img1 = "https://rbobkoskie3.github.io/images/ST_Neg_Line.png",
+                    img2 = "https://rbobkoskie3.github.io/images/HC_Neg_Line.png";
+                var imgElement = document.getElementById('lineNeg');
+                imgElement.src = (imgElement.src === img1)? img2 : img1;
+            }
+
+            var gtech = document.getElementById("gtech");
+            var lineNeg = document.getElementById("lineNeg");
+            function setBG_Black() {
+                document.getElementById("myAnimation").style.backgroundColor = "yellow";
+                document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+                document.body.style.color = "yellow";
+                gtech.src = "https://rbobkoskie3.github.io/images/gtech_HCS.png";
+                lineNeg.src = "https://rbobkoskie3.github.io/images/HC_Neg_Line.png";
+            }
+            function setBG_White() {
+                document.getElementById("myAnimation").style.backgroundColor = "black";
+                document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+                document.body.style.color = "black";
+                gtech.src = "https://rbobkoskie3.github.io/images/gtech.png";
+                lineNeg.src = "https://rbobkoskie3.github.io/images/ST_Neg_Line.png";
+            }
+        </script>
+
+        <div id ="myAnimation"></div>
+    </div>
+
+        <audio id="audio" src="https://rbobkoskie3.github.io/sounds/line_neg.mp4"></audio>
+        <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
+        <button class="play" onclick="play(this)">SONIFICATION</button>
+        <br>
+        <button class="volDec" onclick="vol_dec()">-</button>
+        <button class="volInc" onclick="vol_inc()">+ VOLUME</button>
+
+        <script>
+                var audio = document.getElementById("audio");
+                audio.volume = 0.4;
+                var isPlaying = false;
+
+                function vol_inc() {
+                        audio.volume += 0.1;
+                }
+
+                function vol_dec() {
+                        audio.volume -= 0.1;
+                }
+
+                function play(button) {
+                        var elem = document.getElementById("myAnimation");
+                        var newone = elem.cloneNode(true);
+                        var audio = document.getElementById("audio");
+                        // document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
+                        elem.style.animationDuration = audio.duration + "s";
+                        elem.style.oAnimationDuration = audio.duration + "s";
+                        elem.style.mozAnimationDuration = audio.duration + "s";
+                        elem.style.webkitAnimationDuration = audio.duration + "s";
+
+                        audio.onended = function() {
+                                elem.style.animationPlayState = 'paused';
+                                elem.style.oAnimationPlayState = 'paused';
+                                elem.style.mozAnimationPlayState = 'paused';
+                                elem.style.webkitAnimationPlayState = 'paused';
+                                elem.parentNode.replaceChild(newone, elem);
+
+                                // button.innerHTML = "PLAY";
+                                button.removeAttribute("class");
+                                button.setAttribute("class", "button");
+                                button.setAttribute("class", "play");
+                                isPlaying = false
+                        };
+                        if (!isPlaying) {
+                                audio.play();
+                                elem.style.webkitAnimationPlayState = 'running';
+                                // button.innerHTML = "PAUSE";
+                                button.removeAttribute("class");
+                                button.setAttribute("class", "button");
+                                button.setAttribute("class", "pause");
+                                isPlaying = true
+                        }
+                        else {
+                                if (!audio.ended) {
+                                    audio.pause();
+                                    elem.style.webkitAnimationPlayState = 'paused';
+                                    // button.innerHTML = "PLAY";
+                                    button.removeAttribute("class");
+                                    button.setAttribute("class", "button");
+                                    button.setAttribute("class", "play");
+                                    isPlaying = false
+                                }
+                                else {
+                                    audio.play();
+                                    elem.style.webkitAnimationPlayState = 'running';
+                                    // button.innerHTML = "PAUSE";
+                                    button.removeAttribute("class");
+                                    button.setAttribute("class", "button");
+                                    button.setAttribute("class", "pause");
+                                    isPlaying = true
+                                }
+                        }
+                }
+        </script>
+</body>
