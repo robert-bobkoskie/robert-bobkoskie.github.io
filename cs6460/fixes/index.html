@@ -129,7 +129,7 @@ title: Math, Sonification, Plots
                 // width: 800px;
                 // height: 600px;
                 position: relative;
-                // background: url('https://robert-bobkoskie/cs6460/images/ST_Circle.png');
+                // background: url('https://robert-bobkoskie.github.io/cs6460/images/ST_Circle.png');
                 background-color: blue;
                 // background-color: black;
         }
@@ -241,13 +241,13 @@ title: Math, Sonification, Plots
 
     <!-- img src="\images\ST_Circle.png" title="Graph of a Circle w/o High Contrast" -->
     <div class="center fit myContainer">
-        <img id="lineNeg" class="center fit myContainer" src="https://robert-bobkoskie/cs6460/images/ST_Neg_Line.png"
+        <img id="lineNeg" class="center fit myContainer" src="https://robert-bobkoskie.github.io/cs6460/images/ST_Neg_Line.png"
              title="Click on Image to Toggle Between High Contrast <> Standard Contrast" onclick = "change();"/>
 
         <script>
             function change() {
-                var img1 = "https://robert-bobkoskie/cs6460/images/ST_Neg_Line.png",
-                    img2 = "https://robert-bobkoskie/cs6460/images/HC_Neg_Line.png";
+                var img1 = "https://robert-bobkoskie.github.io/cs6460/images/ST_Neg_Line.png",
+                    img2 = "https://robert-bobkoskie.github.io/cs6460/images/HC_Neg_Line.png";
                 var imgElement = document.getElementById('lineNeg');
                 imgElement.src = (imgElement.src === img1)? img2 : img1;
             }
@@ -258,22 +258,22 @@ title: Math, Sonification, Plots
                 document.getElementById("myAnimation").style.backgroundColor = "yellow";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
                 document.body.style.color = "yellow";
-                gtech.src = "https://robert-bobkoskie/cs6460/images/gtech_HCS.png";
-                lineNeg.src = "https://robert-bobkoskie/cs6460/images/HC_Neg_Line.png";
+                gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+                lineNeg.src = "https://robert-bobkoskie.github.io/cs6460/images/HC_Neg_Line.png";
             }
             function setBG_White() {
                 document.getElementById("myAnimation").style.backgroundColor = "black";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
                 document.body.style.color = "black";
-                gtech.src = "https://robert-bobkoskie/cs6460/images/gtech.png";
-                lineNeg.src = "https://robert-bobkoskie/cs6460/images/ST_Neg_Line.png";
+                gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+                lineNeg.src = "https://robert-bobkoskie.github.io/cs6460/images/ST_Neg_Line.png";
             }
         </script>
 
         <div id ="myAnimation"></div>
     </div>
 
-        <audio id="audio" src="https://robert-bobkoskie/cs6460/sounds/line_neg.mp4"></audio>
+        <audio id="audio" src="https://robert-bobkoskie.github.io/cs6460/sounds/line_neg.mp4"></audio>
         <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
         <button class="play" onclick="play(this)">SONIFICATION</button>
         <br>
