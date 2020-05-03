@@ -129,7 +129,7 @@ title: Math, Sonification, Plots
                 // width: 800px;
                 // height: 600px;
                 position: relative;
-                // background: url('https://robert-bobkoskie.github.io/cs6460/images/ST_Circle.png');
+                // background: url('https://rbobkoskie3.github.io/images/ST_Circle.png');
                 // background-color: blue;
                 // background-color: black;
         }
@@ -357,7 +357,7 @@ title: Math, Sonification, Plots
     <!-- img class="center fit" src="\images\ST_3D_Hyperbola.png" title="Graph of a 3-Dimensional Hyperbola w/o High Contrast" -->
     <div class="center fit myContainer">
         <img id="myFunction" class="center fit myContainer"
-            src="https://robert-bobkoskie.github.io/cs6460/images/ST_3D_Hyperbola.png"
+            src="https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png"
             title="Click on Image to [ Play > Pause || ] Sonification"
             onclick = "change(); play(playButton);"/>
 
@@ -365,7 +365,7 @@ title: Math, Sonification, Plots
 
     </div>
 
-        <audio id="audio" src="https://robert-bobkoskie.github.io/cs6460/sounds/hyperbola.mp4"></audio>
+        <audio id="audio" src="https://rbobkoskie3.github.io/sounds/hyperbola.mp4"></audio>
         <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
         <div class="floatButton">
             <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
@@ -389,8 +389,8 @@ title: Math, Sonification, Plots
             var playButton = document.getElementById("playButton")
 
             function change() {
-                var img1 = "https://robert-bobkoskie.github.io/cs6460/images/ST_3D_Hyperbola.png",
-                    img2 = "https://robert-bobkoskie.github.io/cs6460/images/HC_3D_Hyperbola.png";
+                var img1 = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png",
+                    img2 = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
                 var imgElement = document.getElementById('myFunction');
                 imgElement.src = (imgElement.src === img1)? img2 : img1;
             }
@@ -401,15 +401,15 @@ title: Math, Sonification, Plots
                 document.getElementById("myAnimation").style.backgroundColor = "yellow";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
                 document.body.style.color = "yellow";
-                gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
-                plot.src = "https://robert-bobkoskie.github.io/cs6460/images/HC_3D_Hyperbola.png";
+                gtech.src = "/cs6460/images/gtech_HCS.png";
+                plot.src = "/cs6460/images/HC_3D_Hyperbola.png";
             }
             function setBG_White() {
                 document.getElementById("myAnimation").style.backgroundColor = "black";
                 document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
                 document.body.style.color = "black";
-                gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
-                plot.src = "https://robert-bobkoskie.github.io/cs6460/images/ST_3D_Hyperbola.png";
+                gtech.src = "/cs6460/images/gtech.png";
+                plot.src = "/cs6460/images/ST_3D_Hyperbola.png";
             }
         </script>
 
@@ -480,39 +480,4 @@ title: Math, Sonification, Plots
                         }
                 }
         </script>
-		
-		<footer>
-		<div class="container">
-
-                    {{ content }}
-
-		</div><!-- /.container -->
-                <br>
-
-                <h1>Math Plots</h1>
-		<nav><ul>
-                    <li><a href="/line" target="_self">LINES</a></li>
-        	    <li><a href="/circle" target="_self">CIRCLES</a></li>
-        	    <li><a href="/parabola" target="_self">PARABOLAS</a></li>
-		    <li><a href="/hyperbola" target="_self">HYPERBOLAS</a></li>
-		</ul></nav>
-		<br><br><br>
-		
-			<ul>
-				<p>Comments.</p>
-					<a href="https://youtu.be/x54uVowlfMU" target="_blank">
-						<img class="center fit" src="https://robert-bobkoskie.github.io/cs6460/images/comments.png"
-						title="Click on Image to Enter Comments"
-						alt="https://youtu.be/x54uVowlfMU" style="border:0;">
-					</a>
-				<br><br><br>
-
-				<p>If there are any additional feedback, enter in textbox and click "Send".</p>
-				<form action="mailto:rbobkoskie3@gatech.edu" method="GET">
-					<textarea name="body"></textarea>
-					<input type="submit" value="Send" />
-				</form>
-				<li><a href="https://github.com/rbobkoskie3">github.com/rbobkoskie3</a></li>
-			</ul>
-		</footer>
 </body>
