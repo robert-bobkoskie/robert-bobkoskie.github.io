@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<img id ="gtech" class="center fit" style="width:500px;height:101px" src="\cs6460\images\gtech.png">
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/cs6460/css/main.css">
+		<br><br>
+	</head>
+
+	<style>
+			div { 
+				text-align: justify; 
+				text-justify: inter-word; 
+			} 
+
+			.btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				float: left; /* Float the buttons side by side */
+			}
+
+			/* Clear floats (clearfix hack) */
+			.btn-group:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+
+			.fit {  /* set relative picture size */
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.center {
+				display: block;
+				margin: auto;
+			}
+	</style>
+
+	<body>
+		<nav><ul>
+			<li><a href="/" target="_self">Home</a></li>	        
+			<li><a href="/about" target="_self">Project Propositum</a></li>	        	
+		</ul></nav>
+	
+		<div><p>
+			Select High Contrast, or Standard (Std) Contrast for the webpage.
+		</div></p>
+
+		<div class="btn-group">
+			<button type="button" onclick="setBG_Black()">HIGH CONTRAST</button>
+			<button type="button" onclick="setBG_White()">STD  CONTRAST</button>
+		</div>
+
+		<script>
+			var gtech =  document.getElementById("gtech");
+			function setBG_Black() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+				document.body.style.color = "yellow";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+			}
+			function setBG_White() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+				document.body.style.color = "black";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+			}
+		</script>
+
+		<div class="container">
+
+			{{ content }}
+
+		</div><!-- /.container -->
+		<br>
+
+		<h1>Math Plots</h1>
+		<nav><ul>
+			<li><a href="/cs6460/line" target="_self">LINES</a></li>
+			<li><a href="/cs6460/circle" target="_self">CIRCLES</a></li>
+			<li><a href="/cs6460/parabola" target="_self">PARABOLAS</a></li>
+			<li><a href="/cs6460/hyperbola" target="_self">HYPERBOLAS</a></li>
+		</ul></nav>
+		<br><br><br>
+
+		<footer>
+			<ul>
+				<p>Comments.</p>
+				<a href="https://youtu.be/x54uVowlfMU" target="_blank">
+				<img class="center fit" src="/cs6460/images/comments.png"
+				title="Click on Image to Enter Comments"
+				alt="https://youtu.be/x54uVowlfMU" style="border:0;">
+			</a>
+			<br><br><br>
+
+			<p>If there are any additional feedback, enter in textbox and click "Send".</p>
+			<form action="mailto:rbobkoskie3@gatech.edu" method="GET">
+				<textarea name="body"></textarea>
+				<input type="submit" value="Send" />
+			</form>
+			<li><a href="https://github.com/rbobkoskie3">github.com/rbobkoskie3</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
