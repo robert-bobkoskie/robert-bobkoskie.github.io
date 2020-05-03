@@ -22,10 +22,24 @@
 				font-size: 18px;
 				padding: 10px 24px; /* Some padding */
 				cursor: pointer; /* Pointer/hand icon */
-				float: left; /* Float the buttons side by side */
+				
 			}
 
-			
+			/* Clear floats (clearfix hack) */
+			.btn-group button:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
 						
 			.fit {  /* set relative picture size */
 				max-width: 100%;
@@ -55,8 +69,8 @@
 				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 				COURSES <span class="caret"></span></button>
 				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">CSzz6460</a></li>
-					<li><a href="#">CSzz6470</a></li>
+					<li><a href="#">C6460</a></li>
+					<li><a href="#">CS6470</a></li>
 				</ul>
 			</div>
 		</div>
