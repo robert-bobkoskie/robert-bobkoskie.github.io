@@ -129,7 +129,7 @@ title: Math, Sonification, Plots
                 // width: 800px;
                 // height: 600px;
                 position: relative;
-                // background: url('https://rbobkoskie3.github.io/images/ST_Circle.png');
+                // background: url('/cs6460/images/ST_Circle.png');
                 // background-color: blue;
                 // background-color: black;
         }
@@ -357,7 +357,7 @@ title: Math, Sonification, Plots
     <!-- img class="center fit" src="\images\ST_3D_Hyperbola.png" title="Graph of a 3-Dimensional Hyperbola w/o High Contrast" -->
     <div class="center fit myContainer">
         <img id="myFunction" class="center fit myContainer"
-            src="https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png"
+            src="/cs6460/images/ST_3D_Hyperbola.png"
             title="Click on Image to [ Play > Pause || ] Sonification"
             onclick = "change(); play(playButton);"/>
 
@@ -365,7 +365,7 @@ title: Math, Sonification, Plots
 
     </div>
 
-        <audio id="audio" src="https://rbobkoskie3.github.io/sounds/hyperbola.mp4"></audio>
+        <audio id="audio" src="/cs6460/sounds/hyperbola.mp4"></audio>
         <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
         <div class="floatButton">
             <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
@@ -389,8 +389,8 @@ title: Math, Sonification, Plots
             var playButton = document.getElementById("playButton")
 
             function change() {
-                var img1 = "https://rbobkoskie3.github.io/images/ST_3D_Hyperbola.png",
-                    img2 = "https://rbobkoskie3.github.io/images/HC_3D_Hyperbola.png";
+                var img1 = "/cs6460/images/ST_3D_Hyperbola.png",
+                    img2 = "/cs6460/images/HC_3D_Hyperbola.png";
                 var imgElement = document.getElementById('myFunction');
                 imgElement.src = (imgElement.src === img1)? img2 : img1;
             }
