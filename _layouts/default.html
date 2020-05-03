@@ -60,19 +60,21 @@
 		<div><p>
 			Select High Contrast, or Standard (Std) Contrast for the webpage.
 		</div></p>
-
+		
 		<div class="btn-group">
 			<button type="button" onclick="setBG_Black()">HIGH CONTRAST</button>
 			<button type="button" onclick="setBG_White()">STD  CONTRAST</button>
-		
-			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-			COURSES <span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">CS-6460</a></li>
-				<li><a href="#">CS-6470</a></li>
-			</ul>
+			
+			<div class="btn-group">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				COURSES <span class="caret"></span></button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">CS-6460</a></li>
+					<li><a href="#">CS-6470</a></li>
+				</ul>
+			</div>
 		</div>
-
+		
 		<script>
 			var gtech =  document.getElementById("gtech");
 			function setBG_Black() {
