@@ -348,6 +348,34 @@ title: Math, Sonification, Plots
 </head>
 
 <body>
+	
+	<nav><ul>
+		<li><a href="/" target="_self">Home</a></li>	                	
+	</ul></nav>
+
+	<div><p>
+		Select High Contrast, or Standard (Std) Contrast for the webpage.
+	</div></p>
+
+	<div class="btn-group">
+		<button type="button" onclick="setBG_Black()">HIGH CONTRAST</button>
+		<button type="button" onclick="setBG_White()">STD  CONTRAST</button>
+	</div>
+
+	<script>
+		var gtech =  document.getElementById("gtech");
+		function setBG_Black() {
+			document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+			document.body.style.color = "yellow";
+			gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+		}
+		function setBG_White() {
+			document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+			document.body.style.color = "black";
+			gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+		}
+	</script>
+
     <h1>About the Project</h1>
     <div><p>
         This website is part of a human factors study to improve ergonomics for the visually impaired.
