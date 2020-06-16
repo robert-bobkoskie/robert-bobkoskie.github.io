@@ -184,171 +184,11 @@ title: Math, Sonification, Plots
 				// object-fit: contain;
                 background-color: #555;
                 border-radius: 50%;
-
-                /*
-                 * Sets up the animation duration, timing-function (or easing)
-                 * and iteration-count. Ensure you use the appropriate vendor-specific 
-                 * prefixes as well as the official syntax for now. Remember, tools like 
-                 * CSS Please are your friends!
-                 */
-                // -webkit-animation: myOrbit 4s linear infinite; /* Chrome, Safari 5 */
-                //    -moz-animation: myOrbit 4s linear infinite; /* Firefox 5-15 */
-                //      -o-animation: myOrbit 4s linear infinite; /* Opera 12+ */
-                //         animation: myOrbit 4s linear infinite; /* Chrome, Firefox 16+, 
-                                                                   * IE 10+, Safari 5 */
-
-                -webkit-animation-play-state:paused;
-                -moz-animation-play-state:paused;
-                -o-animation-play-state:paused;
-                animation-play-state:paused;
-
-                -webkit-animation-name: tracePlt;            /* Safari 4.0 - 8.0 */
-                -webkit-animation-duration: 5s;              /* Safari 4.0 - 8.0 */
-                -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
-                -webkit-animation-direction: normal;         /* Safari 4.0 - 8.0 */
-                -webkit-transition-timing-function: linear;  /* Safari 4.0 - 8.0 */
-
-                -moz-animation-name: tracePlt;
-                -moz-animation-duration: 5s;
-                -moz-animation-iteration-count: infinite;
-                -moz-animation-direction: normal;
-                -moz-transition-timing-function: linear;
-
-                -o-animation-name: tracePlt;
-                -o-animation-duration: 5s;
-                -o-animation-iteration-count: infinite;
-                -o-animation-direction: normal;
-                -o-transition-timing-function: linear;
-
-                animation-name: tracePlt;
-                animation-duration: 5s;
-                animation-iteration-count: infinite;
-                animation-direction: normal;
-                // transition-timing-function: linear;
-                // transition-timing-function: cubic-bezier(0,0,0.58,1);
-                // transition-timing-function: ease;
-                animation-timing-function:linear;
-        }
-
-        /* Safari 4.0 - 8.0 */
-        @-webkit-keyframes tracePlt {
-            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -webkit-transform:scale(1.5);}
-            15%  {top:35%; -webkit-transform:scale(3.0);}
-            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -webkit-transform:scale(1.5);}
-            25%  {-webkit-transform:scale(0.5);}
-            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -webkit-transform:scale(1.5);}
-            35%  {-webkit-transform:scale(2.0);}
-            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -webkit-transform:scale(1.5);}
-            45%  {-webkit-transform:scale(0.75);}
-            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -webkit-transform:scale(1.5);}
-            55%  {-webkit-transform:scale(2.0);}
-            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -webkit-transform:scale(1.5);}
-            65%  {-webkit-transform:scale(0.75);}
-            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -webkit-transform:scale(1.5);}
-            75%  {-webkit-transform:scale(3.0);}
-            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -webkit-transform:scale(1.5);}
-            85%  {-webkit-transform:scale(0.5);}
-            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -webkit-transform:scale(1.5);}
-            95%  {-webkit-transform:scale(3.5);}
-            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -webkit-transform:scale(1.0);}
-        }
-        @-moz-keyframes tracePlt {
-            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -moz-transform:scale(1.5);}
-            15%  {top:35%; -moz-transform:scale(3.0);}
-            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -moz-transform:scale(1.5);}
-            25%  {-moz-transform:scale(0.5);}
-            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -moz-transform:scale(1.5);}
-            35%  {-moz-transform:scale(2.0);}
-            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -moz-transform:scale(1.5);}
-            45%  {-moz-transform:scale(0.75);}
-            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -moz-transform:scale(1.5);}
-            55%  {-moz-transform:scale(2.0);}
-            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -moz-transform:scale(1.5);}
-            65%  {-moz-transform:scale(0.75);}
-            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -moz-transform:scale(1.5);}
-            75%  {-moz-transform:scale(3.0);}
-            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -moz-transform:scale(1.5);}
-            85%  {-moz-transform:scale(0.5);}
-            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -moz-transform:scale(1.5);}
-            95%  {-moz-transform:scale(3.5);}
-            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -moz-transform:scale(1.0);}
-        }
-        @-o-keyframes tracePlt {
-            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  -o-transform:scale(1.5);}
-            15%  {top:35%; -o-transform:scale(3.0);}
-            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); -o-transform:scale(1.5);}
-            25%  {-o-transform:scale(0.5);}
-            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  -o-transform:scale(1.5);}
-            35%  {-o-transform:scale(2.0);}
-            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); -o-transform:scale(1.5);}
-            45%  {-o-transform:scale(0.75);}
-            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  -o-transform:scale(1.5);}
-            55%  {-o-transform:scale(2.0);}
-            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); -o-transform:scale(1.5);}
-            65%  {-o-transform:scale(0.75);}
-            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  -o-transform:scale(1.5);}
-            75%  {-o-transform:scale(3.0);}
-            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); -o-transform:scale(1.5);}
-            85%  {-o-transform:scale(0.5);}
-            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  -o-transform:scale(1.5);}
-            95%  {-o-transform:scale(3.5);}
-            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); -o-transform:scale(1.0);}
-        }
-        /* Standard syntax */
-        @keyframes tracePlt {
-            0%   {left:50%; top:15%;}
-            10%  {rotate(10deg);  left:74%; top:24%; rotate(-10deg);  transform:scale(1.5);}
-            15%  {top:35%; transform:scale(3.0);}
-            20%  {rotate(170deg); left:28%; top:30%; rotate(-170deg); transform:scale(1.5);}
-            25%  {transform:scale(0.5);}
-            30%  {rotate(10deg);  left:62%; top:36%; rotate(-10deg);  transform:scale(1.5);}
-            35%  {transform:scale(2.0);}
-            40%  {rotate(170deg); left:44%; top:42%; rotate(-170deg); transform:scale(1.5);}
-            45%  {transform:scale(0.75);}
-            50%  {rotate(10deg);  left:54%; top:48%; rotate(-10deg);  transform:scale(1.5);}
-            55%  {transform:scale(2.0);}
-            60%  {rotate(170deg); left:42%; top:54%; rotate(-170deg); transform:scale(1.5);}
-            65%  {transform:scale(0.75);}
-            70%  {rotate(10deg);  left:63%; top:58%; rotate(-10deg);  transform:scale(1.5);}
-            75%  {transform:scale(3.0);}
-            80%  {rotate(170deg); left:32%; top:64%; rotate(-170deg); transform:scale(1.5);}
-            85%  {transform:scale(0.5);}
-            90%  {rotate(10deg);  left:72%; top:70%; rotate(-10deg);  transform:scale(1.5);}
-            95%  {transform:scale(3.5);}
-            100% {rotate(170deg); left:29%; top:76%; rotate(-170deg); transform:scale(1.0);}
-        }
-
-        /*
-        // *********************************
-        // Set up the keyframes to actually describe the begining and end states of 
-        // the animation.  The browser will interpolate all the frames between these 
-        // points.  Again, remember your vendor-specific prefixes for now!
-
-        @-webkit-keyframes myOrbit {
-            from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-            to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-        }
-
-        @-moz-keyframes myOrbit {
-            from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-            to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-        }
-
-        @-o-keyframes myOrbit {
-            from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-            to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-        }
-
-        @keyframes myOrbit {
-            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-            to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-        }
-        */
+		}
     </style>
 </head>
 
 <body>
-	
 	<nav><ul>
 		<li><a href="/" target="_self">Home</a></li>	                	
 	</ul></nav>
@@ -400,7 +240,6 @@ title: Math, Sonification, Plots
             src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
             title="Click on Image to [ Play > Pause || ] Sonification"
             onclick = "change(); play(playButton);"/>
-
         <div id ="myAnimation"></div>
     </div>
 	<br>
