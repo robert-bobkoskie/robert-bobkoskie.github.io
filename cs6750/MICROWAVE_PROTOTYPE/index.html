@@ -266,19 +266,14 @@ title: Math, Sonification, Plots
 				Note that the native browser on iPhone does not support volume control from the application.
 			</p></div>
 		</div>
-		<div class="floatButton"></div>
+		<div class="floatButton">
+			<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
+			<br>
+			<button class="volDec" onclick="vol_dec()">-</button>
+			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
+		</div>
+		<br style="clear:both" />
 	</div><br>
-
-	<! –– audio id="audio" src="/cs6460/sounds/hyperbola.mp4"></audio -->
-	<!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
-	<div class="floatButton">
-		<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
-		<br>
-		<button class="volDec" onclick="vol_dec()">-</button>
-		<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
-	</div>
-	<br style="clear:both" />
-	<br><br><br>
 
         <script>
             var playButton = document.getElementById("playButton")
