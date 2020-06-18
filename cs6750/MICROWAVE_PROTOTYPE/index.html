@@ -144,11 +144,13 @@ title: Math, Sonification, Plots
 
         .floatWarning {
             width:40%;
-            // width: 500px;
+            /* width: 500px; */
             height: 200px;
             display:inline-block;
-            // float:left;
-            // position:relative;
+            /* float:left; */
+			width: 50%;
+			float: left;
+            /* position:relative; */
             position:absolute;
             overflow-y: scroll;
             padding: 10px 10px 10px 10px;
@@ -156,18 +158,27 @@ title: Math, Sonification, Plots
         }
 		
 		.myContainer {
-                // width: 100%;
-                // height: 100%;
-                width: 800px;
-                height: 600px;
-                position: relative;
-				// position: absolute;
-				// overflow: visible;
-				overflow: hidden;
-                // background: url('/cs6460/images/ST_Circle.png');
-                // background-color: blue;
-                // background-color: black;
+				fwidth: 50%;
+				float: left;
+				padding: 20px;
+                /* width: 100%; */
+                /* height: 100%; */
+                /* width: 800px; */
+                /* height: 600px; */
+                /* position: relative; */
+				/* position: absolute; */
+				/* overflow: visible; */
+				/* overflow: hidden; */
+                /* background: url('/cs6460/images/ST_Circle.png'); */
+                /* background-color: blue; */
+                /* background-color: black; */
         }
+		
+		.floatItems {
+				fwidth: 50%;
+				float: left;
+				padding: 20px;
+		}
 
         #myAnimation {
                 width: 38px;
@@ -238,24 +249,31 @@ title: Math, Sonification, Plots
 
     <!-- img class="center fit" src="\images\ST_3D_Hyperbola.png" title="Graph of a 3-Dimensional Hyperbola w/o High Contrast" -->
     <div>
-        <img id="myFunction"
-            src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
-            title="Click on Image for Description of Usage"
-            onclick = "change(); play(playButton);"/>
-        <! –– div id ="myAnimation"></div -- >
-		<! –– img class="myAnimation" class="center fit myContainer" -- >
-		<! -- img id="myAnimation" class="center fit myContainer" -- >
-		<img id="myAnimation"/>
+		<div class="myContainer">
+			<div class="floatItems">
+				<img id="myFunction"
+					src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
+					title="Click on Image for Description of Usage"
+					onclick = "change(); play(playButton);"/>
+				<! –– div id ="myAnimation"></div -- >
+				<! –– img class="myAnimation" class="center fit myContainer" -- >
+				<! -- img id="myAnimation" class="center fit myContainer" -- >
+				<img id="myAnimation"/>
+				<! -- div class="green">Float Column 1</div -- >
+			</div>
+		<div class="float-child">
+			<div class="floatWarning">
+				<div><p>
+					!ALERT! Sonification uses sound: frequency, amplitude and timbre to convey 
+					information. It is advisable to adjust the volume on your device prior to 
+					playing the sonification for the plots. You can also adjust the volume
+					during play, either from your device, or the volume buttons for this application.
+					Note that the native browser on iPhone does not support volume control from the application.
+				</p></div>
+			</div>
+			<! -- div class="blue">Float Column 2</div -- >
+		</div>
 	</div>
-	<div class="floatWarning">
-            <div><p>
-                !ALERT! Sonification uses sound: frequency, amplitude and timbre to convey 
-                information. It is advisable to adjust the volume on your device prior to 
-                playing the sonification for the plots. You can also adjust the volume
-                during play, either from your device, or the volume buttons for this application.
-                Note that the native browser on iPhone does not support volume control from the application.
-            </p></div>
-        </div>
 	<br>
 
         <! –– audio id="audio" src="/cs6460/sounds/hyperbola.mp4"></audio -->
