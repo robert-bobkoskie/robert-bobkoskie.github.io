@@ -136,10 +136,10 @@ title: Math, Sonification, Plots
         .floatButton {
             width: 220px;
             height: 100%;
-            // transform: scale(.5, .5);
-            // display:inline-block;
+            /* transform: scale(.5, .5); */
+            /* display:inline-block; */
             float:left;
-            // border: 3px solid #73AD21;
+            /* border: 3px solid #73AD21; */
         }
 
         .floatWarning {
@@ -244,48 +244,40 @@ title: Math, Sonification, Plots
         <a href="../docs/ASSIGNMENT_M2-rbobkoskie3.pdf" title="A Better User Interface for the Visually Impaired"
         target="_blank">paper</a>
         commensurable for publication.
-    </p></div>
-    <br>
-
-    <!-- img class="center fit" src="\images\ST_3D_Hyperbola.png" title="Graph of a 3-Dimensional Hyperbola w/o High Contrast" -->
-    <div>
-		<div class="myContainer">
-			<div class="floatItems">
-				<img id="myFunction"
-					src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
-					title="Click on Image for Description of Usage"
-					onclick = "change(); play(playButton);"/>
-				<! –– div id ="myAnimation"></div -- >
-				<! –– img class="myAnimation" class="center fit myContainer" -- >
-				<! -- img id="myAnimation" class="center fit myContainer" -- >
-				<img id="myAnimation"/>
-				<! -- div class="green">Float Column 1</div -- >
-			</div>
-		<div class="float-child">
-			<div class="floatWarning">
-				<div><p>
-					!ALERT! Sonification uses sound: frequency, amplitude and timbre to convey 
-					information. It is advisable to adjust the volume on your device prior to 
-					playing the sonification for the plots. You can also adjust the volume
-					during play, either from your device, or the volume buttons for this application.
-					Note that the native browser on iPhone does not support volume control from the application.
-				</p></div>
-			</div>
-			<! -- div class="blue">Float Column 2</div -- >
+    </p></div><br>
+    
+	<div class="myContainer">
+		<div class="floatItems">
+			<img id="myFunction"
+				src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
+				title="Click on Image for Description of Usage"
+				onclick = "change(); play(playButton);"/>
+			<! –– div id ="myAnimation"></div -- >
+			<! –– img class="myAnimation" class="center fit myContainer" -- >
+			<! -- img id="myAnimation" class="center fit myContainer" -- >
+			<img id="myAnimation"/>
 		</div>
-	</div>
-	<br>
+		<div class="floatWarning">
+			<div><p>
+				!ALERT! Sonification uses sound: frequency, amplitude and timbre to convey 
+				information. It is advisable to adjust the volume on your device prior to 
+				playing the sonification for the plots. You can also adjust the volume
+				during play, either from your device, or the volume buttons for this application.
+				Note that the native browser on iPhone does not support volume control from the application.
+			</p></div>
+		</div>
+	</div><br>
 
-        <! –– audio id="audio" src="/cs6460/sounds/hyperbola.mp4"></audio -->
-        <!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
-        <div class="floatButton">
-            <button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
-            <br>
-            <button class="volDec" onclick="vol_dec()">-</button>
-            <button class="volInc" onclick="vol_inc()">+ VOLUME</button>
-        </div>
-        <br style="clear:both" />
-        <br><br><br>
+	<! –– audio id="audio" src="/cs6460/sounds/hyperbola.mp4"></audio -->
+	<!-- input type="button" class="button" value="SONIFICATION" onclick="play()" -->
+	<div class="floatButton">
+		<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
+		<br>
+		<button class="volDec" onclick="vol_dec()">-</button>
+		<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
+	</div>
+	<br style="clear:both" />
+	<br><br><br>
 
         <script>
             var playButton = document.getElementById("playButton")
