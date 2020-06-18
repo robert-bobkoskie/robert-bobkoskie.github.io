@@ -35,12 +35,8 @@ title: Math, Sonification, Plots
                 cursor: pointer;
         }
 		
-		.button_ckdf button {
-                background-color: #4CAF50; /* Green background */
-                border: 1px solid green; /* Green border */
-                color: white; /* White text */
-                font-weight: bold;
-                padding: 10px 24px; /* Some padding */
+		.button_ckdf {
+				padding: 10px 24px; /* Some padding */
                 cursor: pointer; /* Pointer/hand icon */
                 float: left; /* Float the buttons side by side */
         }
@@ -289,9 +285,11 @@ title: Math, Sonification, Plots
 				src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				title="Click on Image for Description of Usage"
 				onclick = "change(); play(playButton);"/>
-			<! –– div id ="myAnimation"></div -- >
-			<! –– img class="myAnimation" class="center fit myContainer" -- >
-			<! -- img id="myAnimation" class="center fit myContainer" -- >
+			<script>
+			<div id ="myAnimation"></div>
+			<img class="myAnimation" class="center fit myContainer">
+			<img id="myAnimation" class="center fit myContainer">
+			</script>
 			<img id="myAnimation"/>
 		</div>
 		<div class="floatWarning">
