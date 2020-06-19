@@ -295,7 +295,7 @@ title: Math, Sonification, Plots
     
 	<div class="myContainer">
 		<div class="floatItems">
-			<img id="myFunction"
+			<img id="myTouchscreen"
 				src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				style="width:150%;height:auto;"
 				title="Click on Image for Description of Usage"
@@ -333,6 +333,11 @@ title: Math, Sonification, Plots
 	</div>
 	<! -- br style="clear:both" / -- >
 
+	<audio>
+		<source src="sounds/microwave_cook_sound.mp4"></source>
+		<source src="sounds/microwave_defrost_sound.mp4"></source>
+	</audio>
+
 	<script>
 		var playButton = document.getElementById("playButton")
 
@@ -362,42 +367,69 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-			var audio = document.getElementById("audio");
-			audio.volume = 0.4;
-			var isPlaying = false;
+		var audio = $("#mySoundClip")[0];
+		audio.play();
+		
+		var audio = $("#mySoundClip")[0];
+		$("nav a").mouseenter(function() {
+		audio.play();
+		});
 
-			function vol_inc() {
-					audio.volume += 0.1;
-			}
+		var audio = document.getElementById("audio");
+		audio.volume = 0.4;
+		var isPlaying = false;
 
-			function vol_dec() {
-					audio.volume -= 0.1;
-			}
+		function vol_inc() {
+				audio.volume += 0.1;
+		}
 
-			function play(button) {
-					var elem = document.getElementById("myAnimation");
-					var newone = elem.cloneNode(true);
-					var audio = document.getElementById("audio");
-					// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
-					elem.style.animationDuration = audio.duration + "s";
-					elem.style.oAnimationDuration = audio.duration + "s";
-					elem.style.mozAnimationDuration = audio.duration + "s";
-					elem.style.webkitAnimationDuration = audio.duration + "s";
+		function vol_dec() {
+				audio.volume -= 0.1;
+		}
 
-					audio.onended = function() {
-							elem.style.animationPlayState = 'paused';
-							elem.style.oAnimationPlayState = 'paused';
-							elem.style.mozAnimationPlayState = 'paused';
+		function play(button) {
+				var elem = document.getElementById("myAnimation");
+				var newone = elem.cloneNode(true);
+				var audio = document.getElementById("audio");
+				// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
+				elem.style.animationDuration = audio.duration + "s";
+				elem.style.oAnimationDuration = audio.duration + "s";
+				elem.style.mozAnimationDuration = audio.duration + "s";
+				elem.style.webkitAnimationDuration = audio.duration + "s";
+
+				audio.onended = function() {
+						elem.style.animationPlayState = 'paused';
+						elem.style.oAnimationPlayState = 'paused';
+						elem.style.mozAnimationPlayState = 'paused';
+						elem.style.webkitAnimationPlayState = 'paused';
+						elem.parentNode.replaceChild(newone, elem);
+
+						// button.innerHTML = "PLAY";
+						button.removeAttribute("class");
+						button.setAttribute("class", "button");
+						button.setAttribute("class", "play");
+						isPlaying = false
+				};
+				if (!isPlaying) {
+						audio.play();
+						elem.style.webkitAnimationPlayState = 'running';
+						// button.innerHTML = "PAUSE";
+						button.removeAttribute("class");
+						button.setAttribute("class", "button");
+						button.setAttribute("class", "pause");
+						isPlaying = true
+				}
+				else {
+						if (!audio.ended) {
+							audio.pause();
 							elem.style.webkitAnimationPlayState = 'paused';
-							elem.parentNode.replaceChild(newone, elem);
-
 							// button.innerHTML = "PLAY";
 							button.removeAttribute("class");
 							button.setAttribute("class", "button");
 							button.setAttribute("class", "play");
 							isPlaying = false
-					};
-					if (!isPlaying) {
+						}
+						else {
 							audio.play();
 							elem.style.webkitAnimationPlayState = 'running';
 							// button.innerHTML = "PAUSE";
@@ -405,28 +437,9 @@ title: Math, Sonification, Plots
 							button.setAttribute("class", "button");
 							button.setAttribute("class", "pause");
 							isPlaying = true
-					}
-					else {
-							if (!audio.ended) {
-								audio.pause();
-								elem.style.webkitAnimationPlayState = 'paused';
-								// button.innerHTML = "PLAY";
-								button.removeAttribute("class");
-								button.setAttribute("class", "button");
-								button.setAttribute("class", "play");
-								isPlaying = false
-							}
-							else {
-								audio.play();
-								elem.style.webkitAnimationPlayState = 'running';
-								// button.innerHTML = "PAUSE";
-								button.removeAttribute("class");
-								button.setAttribute("class", "button");
-								button.setAttribute("class", "pause");
-								isPlaying = true
-							}
-					}
-			}
+						}
+				}
+		}
 	</script>
 </body>
 <!-- footer><p><br>TESTING TESTING<br></p></footer -->
