@@ -234,6 +234,13 @@ title: Math, Sonification, Plots
 				color: black;
                 border-radius: 50%;
 		}
+		
+		.btn_xl {
+				padding: 10px 20px;
+				font-size: 20px;
+				border-radius: 10px;
+				width:50%;
+		}
     </style>
 </head>
 
@@ -308,9 +315,11 @@ title: Math, Sonification, Plots
 		</div>
 	</div>
 	<div class="btn-group btn-group-lg">
-		<button type="button" class="btn btn-primary">  COOK </button>
-		<button type="button" class="btn btn-primary">DEFROST</button>	
+		<button type="button" class="btn_xl"> COOOK      </button>
+		<button type="button" class="btn_xl">DEFROST</button>	
 		<style>
+			<button type="button" class="btn btn-primary">  COOK </button>
+			<button type="button" class="btn btn-primary">DEFROST</button>	
 			<button type="button_ck" onclick="setBG_Black()">  COOK </button>
 			<button type="button_df" onclick="setBG_White()">DEFROST</button>			
 			<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
