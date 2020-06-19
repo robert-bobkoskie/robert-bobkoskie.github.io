@@ -317,101 +317,101 @@ title: Math, Sonification, Plots
 		</div>
 		<! -- br style="clear:both" / -- >
 	</div>
+	<footer><p><br>TESTING<br></p></footer>
+
+	<script>
+		var playButton = document.getElementById("playButton")
+
+		function change() {
+			var img1 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png",
+				img2 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
+			var imgElement = document.getElementById('myFunction');
+			imgElement.src = (imgElement.src === img1)? img2 : img1;
+		}
+
+		var gtech = document.getElementById("gtech");
+		var plot = document.getElementById("myFunction");
+		function setBG_Black() {
+			document.getElementById("myAnimation").style.backgroundColor = "yellow";
+			document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+			document.body.style.color = "yellow";
+			gtech.src = "/cs6750/images/gtech_HCS.png";
+			plot.src = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
+		}
+		function setBG_White() {
+			document.getElementById("myAnimation").style.backgroundColor = "black";
+			document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+			document.body.style.color = "black";
+			gtech.src = "/cs6750/images/gtech.png";
+			plot.src = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png";
+		}
+	</script>
+
+	<script>
+			var audio = document.getElementById("audio");
+			audio.volume = 0.4;
+			var isPlaying = false;
+
+			function vol_inc() {
+					audio.volume += 0.1;
+			}
+
+			function vol_dec() {
+					audio.volume -= 0.1;
+			}
+
+			function play(button) {
+					var elem = document.getElementById("myAnimation");
+					var newone = elem.cloneNode(true);
+					var audio = document.getElementById("audio");
+					// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
+					elem.style.animationDuration = audio.duration + "s";
+					elem.style.oAnimationDuration = audio.duration + "s";
+					elem.style.mozAnimationDuration = audio.duration + "s";
+					elem.style.webkitAnimationDuration = audio.duration + "s";
+
+					audio.onended = function() {
+							elem.style.animationPlayState = 'paused';
+							elem.style.oAnimationPlayState = 'paused';
+							elem.style.mozAnimationPlayState = 'paused';
+							elem.style.webkitAnimationPlayState = 'paused';
+							elem.parentNode.replaceChild(newone, elem);
+
+							// button.innerHTML = "PLAY";
+							button.removeAttribute("class");
+							button.setAttribute("class", "button");
+							button.setAttribute("class", "play");
+							isPlaying = false
+					};
+					if (!isPlaying) {
+							audio.play();
+							elem.style.webkitAnimationPlayState = 'running';
+							// button.innerHTML = "PAUSE";
+							button.removeAttribute("class");
+							button.setAttribute("class", "button");
+							button.setAttribute("class", "pause");
+							isPlaying = true
+					}
+					else {
+							if (!audio.ended) {
+								audio.pause();
+								elem.style.webkitAnimationPlayState = 'paused';
+								// button.innerHTML = "PLAY";
+								button.removeAttribute("class");
+								button.setAttribute("class", "button");
+								button.setAttribute("class", "play");
+								isPlaying = false
+							}
+							else {
+								audio.play();
+								elem.style.webkitAnimationPlayState = 'running';
+								// button.innerHTML = "PAUSE";
+								button.removeAttribute("class");
+								button.setAttribute("class", "button");
+								button.setAttribute("class", "pause");
+								isPlaying = true
+							}
+					}
+			}
+	</script>
 </body>
-<footer><p><br>TESTING<br></p></footer>
-
-        <script>
-            var playButton = document.getElementById("playButton")
-
-            function change() {
-                var img1 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png",
-                    img2 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
-                var imgElement = document.getElementById('myFunction');
-                imgElement.src = (imgElement.src === img1)? img2 : img1;
-            }
-
-            var gtech = document.getElementById("gtech");
-            var plot = document.getElementById("myFunction");
-            function setBG_Black() {
-                document.getElementById("myAnimation").style.backgroundColor = "yellow";
-                document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
-                document.body.style.color = "yellow";
-                gtech.src = "/cs6750/images/gtech_HCS.png";
-                plot.src = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
-            }
-            function setBG_White() {
-                document.getElementById("myAnimation").style.backgroundColor = "black";
-                document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
-                document.body.style.color = "black";
-                gtech.src = "/cs6750/images/gtech.png";
-                plot.src = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png";
-            }
-        </script>
-
-        <script>
-                var audio = document.getElementById("audio");
-                audio.volume = 0.4;
-                var isPlaying = false;
-
-                function vol_inc() {
-                        audio.volume += 0.1;
-                }
-
-                function vol_dec() {
-                        audio.volume -= 0.1;
-                }
-
-                function play(button) {
-                        var elem = document.getElementById("myAnimation");
-                        var newone = elem.cloneNode(true);
-                        var audio = document.getElementById("audio");
-                        // document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
-                        elem.style.animationDuration = audio.duration + "s";
-                        elem.style.oAnimationDuration = audio.duration + "s";
-                        elem.style.mozAnimationDuration = audio.duration + "s";
-                        elem.style.webkitAnimationDuration = audio.duration + "s";
-
-                        audio.onended = function() {
-                                elem.style.animationPlayState = 'paused';
-                                elem.style.oAnimationPlayState = 'paused';
-                                elem.style.mozAnimationPlayState = 'paused';
-                                elem.style.webkitAnimationPlayState = 'paused';
-                                elem.parentNode.replaceChild(newone, elem);
-
-                                // button.innerHTML = "PLAY";
-                                button.removeAttribute("class");
-                                button.setAttribute("class", "button");
-                                button.setAttribute("class", "play");
-                                isPlaying = false
-                        };
-                        if (!isPlaying) {
-                                audio.play();
-                                elem.style.webkitAnimationPlayState = 'running';
-                                // button.innerHTML = "PAUSE";
-                                button.removeAttribute("class");
-                                button.setAttribute("class", "button");
-                                button.setAttribute("class", "pause");
-                                isPlaying = true
-                        }
-                        else {
-                                if (!audio.ended) {
-                                    audio.pause();
-                                    elem.style.webkitAnimationPlayState = 'paused';
-                                    // button.innerHTML = "PLAY";
-                                    button.removeAttribute("class");
-                                    button.setAttribute("class", "button");
-                                    button.setAttribute("class", "play");
-                                    isPlaying = false
-                                }
-                                else {
-                                    audio.play();
-                                    elem.style.webkitAnimationPlayState = 'running';
-                                    // button.innerHTML = "PAUSE";
-                                    button.removeAttribute("class");
-                                    button.setAttribute("class", "button");
-                                    button.setAttribute("class", "pause");
-                                    isPlaying = true
-                                }
-                        }
-                }
-        </script>
