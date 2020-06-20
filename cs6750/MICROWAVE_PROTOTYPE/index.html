@@ -299,6 +299,7 @@ title: Math, Sonification, Plots
 				src="/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				style="width:150%;height:auto;"
 				title="Click on Image for Description of Usage"
+				onclick = "change(); play(audio_touchscreen);"/>
 			<script>
 			<div id ="myAnimation"></div>
 			<img class="myAnimation" class="center fit myContainer">
@@ -322,7 +323,6 @@ title: Math, Sonification, Plots
 		<button type="button" class="btn_xl" onclick="setBG_Black()" style="background-color: red; color: black;"> COOK </button>
 		<button type="button" class="btn_xl" onclick="setBG_White()" style="background-color: #ADD8E6; color: black;"> DEFROST </button>
 		<style>
-			<audio id="audio" src="/cs6750/sounds/INCREASE_TIME.mp4"></audio>
 			<button type="button" class="btn btn-primary">  COOK </button>
 			<button type="button" class="btn btn-primary">DEFROST</button>	
 			<button type="button_ck" onclick="setBG_Black()">  COOK </button>
@@ -340,11 +340,12 @@ title: Math, Sonification, Plots
 		function change() {
 			var img1 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png",
 				img2 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
-			var imgElement = document.getElementById('audio_touchscreen');
+			var imgElement = document.getElementById('myFunction');
 			imgElement.src = (imgElement.src === img1)? img2 : img1;
 		}
 
 		var gtech = document.getElementById("gtech");
+		var plot = document.getElementById("myFunction");
 		function setBG_Black() {
 			document.getElementById("myAnimation").style.backgroundColor = "yellow";
 			document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
