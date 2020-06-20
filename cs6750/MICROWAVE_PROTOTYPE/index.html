@@ -319,7 +319,7 @@ title: Math, Sonification, Plots
 		</div>
 	</div>
 	
-	<audio id="audio" src="sounds/INCREASE_TIME.mp4"></audio>
+	<audio id="audio" src="/cs6750/sounds/INCREASE_TIME.mp4"></audio>
 	<div class="btn-group btn-group-lg">
 		<button type="button" class="btn_xl" onclick="setBG_Black()" style="background-color: red; color: black;"> COOK </button>
 		<button type="button" class="btn_xl" onclick="setBG_White()" style="background-color: #ADD8E6; color: black;"> DEFROST </button>
@@ -341,7 +341,7 @@ title: Math, Sonification, Plots
 		function change() {
 			var img1 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png",
 				img2 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png";
-			var imgElement = document.getElementById('myFunction');
+			var imgElement = document.getElementById('audio_touchscreen');
 			imgElement.src = (imgElement.src === img1)? img2 : img1;
 		}
 
