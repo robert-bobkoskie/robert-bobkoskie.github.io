@@ -354,7 +354,9 @@ title: Math, Sonification, Plots
 			if (imgElement == img1) {
 				imgElement.src = img2
 			}
-			else imgElement.src = img1
+			else if (imgElement == img2) {
+				imgElement.src = img1
+			}
 		}
 
 		var gtech = document.getElementById("gtech");
