@@ -331,7 +331,7 @@ title: Math, Sonification, Plots
 	</div>
 	
 	<div class="btn-group btn-group-lg">
-		<button type="button" class="btn_xl" onclick="setBG_Black(); play_cook();" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
+		<button type="button" class="btn_xl" onclick="cook_function()" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
 		<button type="button" class="btn_xl" onclick="setBG_White()" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
 		<style>
 			<button type="button" class="btn btn-primary">  COOK </button>
@@ -344,13 +344,18 @@ title: Math, Sonification, Plots
 		</style>
 	</div>
 
-	<audio  id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"
-			id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"
+	<audio> <id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4">
+			<id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4">
 	</audio>
 	
 	<script>
 	<script>
 		var playButton = document.getElementById("playButton")
+		
+		function cook_function() {
+			play_cook();
+			setBG_Black();
+		}
 		
 		function play_cook() {
 			var audio = document.getElementById("audio_cook");
