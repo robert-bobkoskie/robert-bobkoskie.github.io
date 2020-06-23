@@ -7,7 +7,11 @@ title: Math, Sonification, Plots
 	<img id ="gtech" class="center fit" style="width:500px;height:101px" src="../images\gtech.png">
 	<title>CS 6750: Human-Computer Interaction</title>
 	<!-- link to main stylesheet -->
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script>
+		!!! Use when moving this index.html file down one directory !!!
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	<br><br>
 	
     <style>
@@ -167,6 +171,7 @@ title: Math, Sonification, Plots
         }
         
         .center {
+				text-align: center;
                 display: block;
                 margin: auto;
         }
@@ -316,22 +321,21 @@ title: Math, Sonification, Plots
 				for smartphone displays.
 			</p></div>
 		</div>
-		
-		<div class="btn-group btn-group-lg">
-			<button type="button" class="btn_xl" onclick="setBG_Black()" style="background-color: red; color: black; float:left;"> COOK </button>
-			<button type="button" class="btn_xl" onclick="setBG_White()" style="background-color: #ADD8E6; color: black; float:right;"> DEFROST </button>
-			<style>
-				<button type="button" class="btn btn-primary">  COOK </button>
-				<button type="button" class="btn btn-primary">DEFROST</button>	
-				<button type="button_ck" onclick="setBG_Black()">  COOK </button>
-				<button type="button_df" onclick="setBG_White()">DEFROST</button>			
-				<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
-				<button class="volDec" onclick="vol_dec()">-</button>
-				<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
-			</style>
-		</div>
 	</div>
-	<div><br>------------ TEST</div>
+	
+	<div class="btn-group btn-group-lg">
+		<button type="button" class="btn_xl" onclick="setBG_Black()" style="background-color: red; color: black; float:left;"> COOK </button>
+		<button type="button" class="btn_xl" onclick="setBG_White()" style="background-color: #ADD8E6; color: black; float:right;"> DEFROST </button>
+		<style>
+			<button type="button" class="btn btn-primary">  COOK </button>
+			<button type="button" class="btn btn-primary">DEFROST</button>	
+			<button type="button_ck" onclick="setBG_Black()">  COOK </button>
+			<button type="button_df" onclick="setBG_White()">DEFROST</button>			
+			<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
+			<button class="volDec" onclick="vol_dec()">-</button>
+			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
+		</style>
+	</div>
 
 	<script>
 		var playButton = document.getElementById("playButton")
