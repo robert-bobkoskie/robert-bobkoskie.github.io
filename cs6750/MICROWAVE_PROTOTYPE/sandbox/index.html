@@ -350,7 +350,11 @@ title: Math, Sonification, Plots
 			var img1 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
 				img2 = "/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png";
 			var imgElement = document.getElementById('myFunction');
-			imgElement.src = (imgElement.src == img1)? img2 : img1;
+			/* imgElement.src = (imgElement.src === img1)? img2 : img1; */
+			if (imgElement == img1) {
+				imgElement.src = img2
+			}
+			else imgElement.src = img1
 		}
 
 		var gtech = document.getElementById("gtech");
