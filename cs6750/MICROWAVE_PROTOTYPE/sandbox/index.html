@@ -397,7 +397,7 @@ title: Math, Sonification, Plots
 						var audio = document.getElementById("audio_defrost");
 					}
 					
-					if (!isPlaying) {
+					if (!isPlaying & isPaused) {
 						audio.play();
 						isPlaying = true;
 					}
