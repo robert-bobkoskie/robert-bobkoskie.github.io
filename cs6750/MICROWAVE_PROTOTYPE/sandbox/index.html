@@ -311,13 +311,14 @@ title: Math, Sonification, Plots
 				 src="https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				 style="width:150%;height:auto;"
 				 title="Click on Image for Description of Usage"
-				 onclick = "change(); play(playButton);"/>
+				 onclick = "change(); play(playSetTime);"/>
 			<style>
 				<div id ="myAnimation"></div>
 				<img id="myAnimation" class="center fit myContainer">
 			</style>
 			<img id="myAnimation"/>
 		</div>
+		
 		<div class="floatWarning">
 			<div><p>
 				This <strong>Wireframe</strong> is a Proof of Concept (POC) design for a novel microwave interface.
@@ -330,9 +331,9 @@ title: Math, Sonification, Plots
 		</div>
 	</div>
 	
-	<div class="btn-group btn-group-lg myFunction">
-		<button type="button" class="btn_xl" onclick="setBG_Black(); play(playButton)" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
-		<button type="button" class="btn_xl" onclick="setBG_White()" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
+	<div class="btn-group btn-group-lg">
+		<button type="button" class="btn_xl" onclick="setBG_Black(); play(playCook)" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
+		<button type="button" class="btn_xl" onclick="setBG_White(); play(playDefrost)" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
 		<style>
 			<button type="button" class="btn btn-primary">  COOK </button>
 			<button type="button" class="btn btn-primary">DEFROST</button>	
@@ -343,19 +344,12 @@ title: Math, Sonification, Plots
 			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
 		</style>
 	</div>
-
-	<audio  id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
-	<audio 	id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	
+	
+	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
+	<audio  id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
+	<audio  id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
 	<script>
-	<script>
-		var playButton = document.getElementById("playButton")
-		
-		function play_cook(button) {
-			var audio = document.getElementById("audio_cook");
-			audio.play();
-		}
-	  
 		function change() {
 			var img1 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
 				img2 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png";
@@ -382,22 +376,27 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-			var audio = document.getElementById("audio");
-			audio.volume = 0.4;
+			var playSetTime = document.getElementById("playSetTime")
+			var playCook = document.getElementById("playCook")
+			var playDefrost = document.getElementById("playDefrost")
 			var isPlaying = false;
-
-			function vol_inc() {
-					audio.volume += 0.1;
-			}
-
-			function vol_dec() {
-					audio.volume -= 0.1;
-			}
+			audio.volume = 0.4;
 
 			function play(button) {
+					var audio;
+					if (button == playSetTime) {
+						var audio = document.getElementById("audio_intro");
+					}
+					else if (button == playCook) {
+						var audio = document.getElementById("audio_cook");
+					}
+					else if (button == playDefrost) {
+						var audio = document.getElementById("audio_defrost");
+					}
+					
 					var elem = document.getElementById("myAnimation");
 					var newone = elem.cloneNode(true);
-					var audio = document.getElementById("audio");
+					
 					// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
 					elem.style.animationDuration = audio.duration + "s";
 					elem.style.oAnimationDuration = audio.duration + "s";
