@@ -374,26 +374,18 @@ title: Math, Sonification, Plots
 	<script>
 			var playSetTime = document.getElementById("playSetTime")
 			var playCook = document.getElementById("playCook")
-			
-			audio.volume = 0.4;
+			var playDefrost = document.getElementById("playDefrost")
 			var isPlaying = false;
-
-			function vol_inc() {
-					audio.volume += 0.1;
-			}
-
-			function vol_dec() {
-					audio.volume -= 0.1;
-			}
+			audio.volume = 0.4;
 
 			function play(button) {
 					if (button == playSetTime) {
-						var audio = document.getElementById("audio_intro");
-					}
-					else if (button == playCook) {
 						var audio = document.getElementById("audio_cook");
 					}
-					else if (button == playDefrost) {
+					if (button == playCook) {
+						var audio = document.getElementById("audio_cook");
+					}
+					if (button == playDefrost) {
 						var audio = document.getElementById("audio_defrost");
 					}
 					
