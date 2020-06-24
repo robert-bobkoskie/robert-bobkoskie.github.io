@@ -369,7 +369,7 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-			var playSetTime = document.getElementById("playButton")
+			var playButton = document.getElementById("playButton")
 			var audio = document.getElementById("audio");
 			audio.volume = 0.4;
 			var isPlaying = false;
@@ -383,7 +383,7 @@ title: Math, Sonification, Plots
 			}
 
 			function play(button) {
-					if (button == playSetTime) {
+					if (button == playButton) {
 						var audio = document.getElementById("audio");
 					}
 					var elem = document.getElementById("myAnimation");
