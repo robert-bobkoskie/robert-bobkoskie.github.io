@@ -381,11 +381,12 @@ title: Math, Sonification, Plots
 			var playSetTime = "playSetTime";
 			var playCook = "playCook";
 			var playDefrost = "playDefrost";
-			var isPlaying = false;
 			audio.volume = 0.4;
 
 			function play(button) {
 					var audio;
+					var isPlaying = false;
+					
 					if (button == playSetTime) {
 						var audio = document.getElementById("audio_intro");
 					}
@@ -395,9 +396,6 @@ title: Math, Sonification, Plots
 					else if (button == playDefrost) {
 						var audio = document.getElementById("audio_defrost");
 					}
-					
-					var elem = document.getElementById("myAnimation");
-					var newone = elem.cloneNode(true);
 					
 					if (!isPlaying) {
 						audio.play();
