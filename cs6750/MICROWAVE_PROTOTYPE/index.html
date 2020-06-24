@@ -343,8 +343,6 @@ title: Math, Sonification, Plots
 	<audio id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
 	<audio 	id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	<script>
-		var playButton = document.getElementById("playButton")
-
 		function change() {
 			var img1 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
 				img2 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_STDCONTRAST.png";
@@ -371,6 +369,7 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
+			var playButton = document.getElementById("playButton")
 			var audio = document.getElementById("audio");
 			audio.volume = 0.4;
 			var isPlaying = false;
