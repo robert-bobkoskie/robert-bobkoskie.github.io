@@ -379,13 +379,14 @@ title: Math, Sonification, Plots
 			audio.volume = 0.4;
 
 			function play(button) {
+					var audio;
 					if (button == playSetTime) {
+						var audio = document.getElementById("audio_intro");
+					}
+					else if (button == playCook) {
 						var audio = document.getElementById("audio_cook");
 					}
-					if (button == playCook) {
-						var audio = document.getElementById("audio_cook");
-					}
-					if (button == playDefrost) {
+					else if (button == playDefrost) {
 						var audio = document.getElementById("audio_defrost");
 					}
 					
