@@ -340,9 +340,11 @@ title: Math, Sonification, Plots
 			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
 		</style>
 	</div>
-
+	
+	
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
-	<audio 	id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
+	<audio  id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
+	<audio  id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	<script>
 		function change() {
 			var img1 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
@@ -390,6 +392,9 @@ title: Math, Sonification, Plots
 					}
 					else if (button == playCook) {
 						var audio = document.getElementById("audio_cook");
+					}
+					else if (button == playDefrost) {
+						var audio = document.getElementById("audio_defrost");
 					}
 					
 					var elem = document.getElementById("myAnimation");
