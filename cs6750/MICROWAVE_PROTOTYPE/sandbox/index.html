@@ -312,10 +312,10 @@ title: Math, Sonification, Plots
 				 style="width:150%;height:auto;"
 				 title="Click on Image for Description of Usage"
 				 onclick = "change(); play(playButton);"/>
-			<script>
-			<div id ="myAnimation"></div>
-			<img id="myAnimation" class="center fit myContainer">
-			</script>
+			<style>
+				<div id ="myAnimation"></div>
+				<img id="myAnimation" class="center fit myContainer">
+			</style>
 			<img id="myAnimation"/>
 		</div>
 		<div class="floatWarning">
@@ -336,7 +336,7 @@ title: Math, Sonification, Plots
 		<style>
 			<button type="button" class="btn btn-primary">  COOK </button>
 			<button type="button" class="btn btn-primary">DEFROST</button>	
-			<button type="button_ck" onclick="setBG_Black()">  COOK </button>
+			<button type="button_ck" onclick="setBG_Black(); play(playButton);">  COOK </button>
 			<button type="button_df" onclick="setBG_White()">DEFROST</button>			
 			<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
 			<button class="volDec" onclick="vol_dec()">-</button>
@@ -344,9 +344,8 @@ title: Math, Sonification, Plots
 		</style>
 	</div>
 
-	<audio  id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"
-			id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"
-	</audio>
+	<audio  id="audio" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
+	<audio 	id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	
 	<script>
 	<script>
