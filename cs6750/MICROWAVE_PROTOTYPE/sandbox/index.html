@@ -331,12 +331,12 @@ title: Math, Sonification, Plots
 	</div>
 	
 	<div class="btn-group btn-group-lg">
-		<button type="button" class="btn_xl" onclick="setBG_Black();" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
+		<button type="button" class="btn_xl" onclick="setBG_Black(); play(playButton)" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
 		<button type="button" class="btn_xl" onclick="setBG_White()" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
 		<style>
 			<button type="button" class="btn btn-primary">  COOK </button>
 			<button type="button" class="btn btn-primary">DEFROST</button>	
-			<button type="button_ck" onclick="setBG_Black(); play(playButton);">  COOK </button>
+			<button type="button_ck" onclick="setBG_Black()">  COOK </button>
 			<button type="button_df" onclick="setBG_White()">DEFROST</button>			
 			<button id="playButton" class="play" onclick="play(this)">SONIFICATION</button>
 			<button class="volDec" onclick="vol_dec()">-</button>
