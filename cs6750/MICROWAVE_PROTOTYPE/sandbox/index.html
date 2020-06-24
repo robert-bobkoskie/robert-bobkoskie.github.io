@@ -382,6 +382,7 @@ title: Math, Sonification, Plots
 			var playCook = "playCook";
 			var playDefrost = "playDefrost";
 			var isPlaying = false;
+			var isPaused = false;
 			audio.volume = 0.4;
 
 			function play(button) {
@@ -401,12 +402,14 @@ title: Math, Sonification, Plots
 						isPlaying = true;
 					}
 					else {
-						if (!audio.ended) {
+						if (!audio.ended & !isPaused) {
 							audio.pause();
 							isPlaying = false;
+							isPaused = true;
 						}
 						else {
-							isPlaying = false;
+							audio.play();
+							isPlaying = true;
 						}
 					}
 			}
