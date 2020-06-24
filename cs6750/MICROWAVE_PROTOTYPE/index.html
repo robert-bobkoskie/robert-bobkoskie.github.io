@@ -384,9 +384,12 @@ title: Math, Sonification, Plots
 			}
 
 			function play(button) {
+					if (button == "playButton") {
+						var audio = document.getElementById("audio");
+					}
 					var elem = document.getElementById("myAnimation");
 					var newone = elem.cloneNode(true);
-					var audio = document.getElementById("audio");
+					
 					// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
 					elem.style.animationDuration = audio.duration + "s";
 					elem.style.oAnimationDuration = audio.duration + "s";
