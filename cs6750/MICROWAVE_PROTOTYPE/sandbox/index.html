@@ -347,8 +347,8 @@ title: Math, Sonification, Plots
 	
 	
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
-	<audio  id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
-	<audio  id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
+	<audio id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
+	<audio id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
 	<script>
 		function change() {
 			var img1 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
@@ -397,53 +397,19 @@ title: Math, Sonification, Plots
 					var elem = document.getElementById("myAnimation");
 					var newone = elem.cloneNode(true);
 					
-					// document.getElementById("myAnimation").style.animationDuration = audio.duration + "s";
-					elem.style.animationDuration = audio.duration + "s";
-					elem.style.oAnimationDuration = audio.duration + "s";
-					elem.style.mozAnimationDuration = audio.duration + "s";
-					elem.style.webkitAnimationDuration = audio.duration + "s";
-
-					audio.onended = function() {
-							elem.style.animationPlayState = 'paused';
-							elem.style.oAnimationPlayState = 'paused';
-							elem.style.mozAnimationPlayState = 'paused';
-							elem.style.webkitAnimationPlayState = 'paused';
-							elem.parentNode.replaceChild(newone, elem);
-
-							// button.innerHTML = "PLAY";
-							button.removeAttribute("class");
-							button.setAttribute("class", "button");
-							button.setAttribute("class", "play");
-							isPlaying = false
-					};
 					if (!isPlaying) {
-							audio.play();
-							elem.style.webkitAnimationPlayState = 'running';
-							// button.innerHTML = "PAUSE";
-							button.removeAttribute("class");
-							button.setAttribute("class", "button");
-							button.setAttribute("class", "pause");
-							isPlaying = true
+						audio.play();
+						isPlaying = true;
 					}
 					else {
-							if (!audio.ended) {
-								audio.pause();
-								elem.style.webkitAnimationPlayState = 'paused';
-								// button.innerHTML = "PLAY";
-								button.removeAttribute("class");
-								button.setAttribute("class", "button");
-								button.setAttribute("class", "play");
-								isPlaying = false
-							}
-							else {
-								audio.play();
-								elem.style.webkitAnimationPlayState = 'running';
-								// button.innerHTML = "PAUSE";
-								button.removeAttribute("class");
-								button.setAttribute("class", "button");
-								button.setAttribute("class", "pause");
-								isPlaying = true
-							}
+						if (!audio.ended) {
+							audio.pause();
+							isPlaying = false;
+						}
+						else {
+							audio.play();
+							isPlaying = true;
+						}
 					}
 			}
 	</script>
