@@ -14,7 +14,6 @@ title: Math, Sonification, Plots
 		<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	</script>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
-	
 	<br><br>
 	
     <style>
@@ -397,22 +396,16 @@ title: Math, Sonification, Plots
 						var audio = document.getElementById("audio_defrost");
 					}
 					
-					var elem = document.getElementById("myAnimation");
-					var newone = elem.cloneNode(true);
-					
 					if (!isPlaying) {
 						audio.play();
 						isPlaying = true;
 					}
+					else if (!audio.ended) {
+						audio.pause();
+						isPlaying = false;
+					}
 					else {
-						if (!audio.ended) {
-							audio.pause();
-							isPlaying = false;
-						}
-						else {
-							audio.play();
-							isPlaying = true;
-						}
+						isPlaying = false;
 					}
 			}
 	</script>
