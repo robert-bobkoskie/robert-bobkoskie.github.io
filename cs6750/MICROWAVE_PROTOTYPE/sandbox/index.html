@@ -320,7 +320,7 @@ title: Math, Sonification, Plots
 			<img id="myAnimation"/>
 		</div>
 		
-		<div class="floatWarning">
+		<div class="floatWarning" id="myWarning">
 			<div><p>
 				This <strong>Wireframe</strong> is a Proof of Concept (POC) design for a novel microwave interface.
 				The primary objective of this interface is to improve user interaction with
@@ -347,15 +347,15 @@ title: Math, Sonification, Plots
 	</div>
 	
 	<script>
-		document.getElementById("myContainer").onmouseover = function() {mouseOver()};
-		document.getElementById("myContainer").onmouseout = function() {mouseOut()};
+		document.getElementById("myWarning").onmouseover = function() {mouseOver()};
+		document.getElementById("myWarning").onmouseout = function() {mouseOut()};
 
 		function mouseOver() {
-		  document.getElementById("myContainer").style.color = "red";
+		  document.getElementById("myWarning").style.color = "red";
 		}
 
 		function mouseOut() {
-		  document.getElementById("myContainer").style.color = "black";
+		  document.getElementById("myWarning").style.color = "black";
 		}
 	</script>
 	
