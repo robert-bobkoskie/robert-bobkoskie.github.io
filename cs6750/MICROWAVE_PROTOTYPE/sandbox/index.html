@@ -345,7 +345,7 @@ title: Math, Sonification, Plots
 			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
 		</style>
 	</div>
-	<p><br>TESTING TESTING<br></p>
+	<p><br> <br> <br> <br> <br> <br> <br> <br></p>
 	
 	<audio id="program_microwave" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/program_microwave.mp4"></audio>
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
@@ -355,10 +355,8 @@ title: Math, Sonification, Plots
 	<script>
 		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		// document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
-		// document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
-		document.getElementById("myFunction").mouseenter = function() {mouseOverImage()};
-		document.getElementById("myFunction").mouseleave = function() {mouseOutImage()};
+		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
+		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
 		
 		function mouseOverImage() {
 		  audio = document.getElementById("program_microwave");
