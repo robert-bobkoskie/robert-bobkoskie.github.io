@@ -359,10 +359,28 @@ title: Math, Sonification, Plots
 		}
 	</script>
 	
+	
 	<audio id="program_microwave" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/program_microwave.mp4"></audio>
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
 	<audio id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	<audio id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
+	<script>
+		document.getElementById("myFunction").onmouseover = function() {mouseOverProject()};
+		document.getElementById("myFunction").onmouseout = function() {mouseOutProject()};
+		
+		function mouseOverProject() {
+		  var audio;
+		  audio = document.getElementById("program_microwave");
+		  audio.play();
+		}
+
+		function mouseOutProject() {
+		  var audio;
+		  audio = document.getElementById("program_microwave");
+		  audio.load();
+		}
+	</script>
+	
 	<script>
 		function change() {
 			var img1 = "https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png",
@@ -389,22 +407,7 @@ title: Math, Sonification, Plots
 		}
 	</script>
 
-	<script>
-		document.getElementById("myFunction").onmouseover = function() {mouseOverProject()};
-		document.getElementById("myFunction").onmouseout = function() {mouseOutProject()};
-		
-		function mouseOverProject() {
-		  var audio;
-		  audio = document.getElementById("program_microwave");
-		  audio.play();
-		}
-
-		function mouseOutProject() {
-		  var audio;
-		  audio = document.getElementById("program_microwave");
-		  audio.load();
-		}
-				
+	<script>	
 		var playSetTime = "playSetTime";
 		var playCook = "playCook";
 		var playDefrost = "playDefrost";
