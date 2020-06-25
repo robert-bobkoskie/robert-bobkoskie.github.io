@@ -309,6 +309,8 @@ title: Math, Sonification, Plots
 	<div class="myContainer">
 		<div class="floatItems">
 			<img id="myFunction"
+				 onmouseover="PlaySound("program_microwave")
+				 onmouseout="StopSound("program_microwave")
 				 src="https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				 style="width:150%;height:auto;"
 				 title="Click on Image for Description of Usage"
@@ -355,17 +357,16 @@ title: Math, Sonification, Plots
 	<script>
 		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
-		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
 		
-		function mouseOverImage() {
-		  audio = document.getElementById("program_microwave");
-		  audio.play();
+		function PlaySound(sound) {
+			var thisSound = document.getElementById(sound);
+			thisSound.play();
 		}
 
-		function mouseOutImage() {
-		  audio = document.getElementById("program_microwave");
-		  audio.load();
+		function StopSound(sound) {
+			var thisSound = document.getElementById(sound);
+			thisSound.pause();
+			thisSound.currentTime = 0;
 		}
 		
 		function mouseOverText() {
