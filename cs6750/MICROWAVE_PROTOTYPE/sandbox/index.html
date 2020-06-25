@@ -399,19 +399,31 @@ title: Math, Sonification, Plots
 					}
 					
 					if (!isPlayingIntro && !isPlayingCook && !isPlayingDefrost) {
-						if (audio == document.getElementById("audio_cook") ||
-						    audio == document.getElementById("audio_defrost")) {
+						if (audio == document.getElementById("audio_cook")) {
 							audio.loop = true;
+							isPlayingCook = true;
+						}
+						else if (audio == document.getElementById("audio_defrost")) {
+							audio.loop = true;
+							isPlayingDefrost = true;
+						}
+						else if (audio == document.getElementById("audio_defrost")) {
+							isPlayingIntro = true;
 						}
 						audio.play();
-						isPlaying = true;
 					}
 					else if (!audio.ended) {
+						if (audio == document.getElementById("audio_cook")) {
+							isPlayingCook = false;
+						}
+						else if (audio == document.getElementById("audio_defrost")) {
+							isPlayingDefrost = false;
+						}
+						else if (audio == document.getElementById("audio_defrost")) {
+							isPlayingIntro = false;
+						}
 						// audio.pause();
 						audio.load();
-						isPlayingIntro = false;
-						isPlayingCook = false;
-						isPlayingDefrost = false;
 					}
 			}
 	</script>
