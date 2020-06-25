@@ -389,17 +389,15 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-		document.getElementById("myContainer").onmouseover = function() {mouseOver()};
-		document.getElementById("myContainer").onmouseout = function() {mouseOut()};
+		document.getElementById("myFunction").onmouseover = function() {mouseOver()};
+		document.getElementById("myFunction").onmouseout = function() {mouseOut()};
 		function mouseOver() {
-		  document.getElementById("myWarning").style.color = "red";
 		  var audio;
 		  audio = document.getElementById("audio_cook");
 		  audio.play();
 		}
 
 		function mouseOut() {
-		  document.getElementById("myWarning").style.color = "green";
 		  var audio;
 		  audio = document.getElementById("audio_cook");
 		  audio.load();
