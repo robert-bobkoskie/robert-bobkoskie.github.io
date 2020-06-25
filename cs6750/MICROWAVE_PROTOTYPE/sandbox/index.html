@@ -407,11 +407,12 @@ title: Math, Sonification, Plots
 							audio.loop = true;
 							isPlayingDefrost = true;
 						}
-						else if (audio == document.getElementById("audio_defrost")) {
+						else if (audio == document.getElementById("audio_intro")) {
 							isPlayingIntro = true;
 						}
 						audio.play();
 					}
+					
 					else if (!audio.ended) {
 						if (audio == document.getElementById("audio_cook")) {
 							isPlayingCook = false;
@@ -419,7 +420,7 @@ title: Math, Sonification, Plots
 						else if (audio == document.getElementById("audio_defrost")) {
 							isPlayingDefrost = false;
 						}
-						else if (audio == document.getElementById("audio_defrost")) {
+						else if (audio == document.getElementById("audio_intro")) {
 							isPlayingIntro = false;
 						}
 						// audio.pause();
