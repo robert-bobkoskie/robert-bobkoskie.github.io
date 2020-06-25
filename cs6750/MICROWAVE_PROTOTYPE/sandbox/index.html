@@ -309,7 +309,6 @@ title: Math, Sonification, Plots
 	<div class="myContainer">
 		<div class="floatItems">
 			<img id="myFunction"
-				 class="myContainer"
 				 src="https://robert-bobkoskie.github.io/cs6750/images/MICROWAVE_INTERFACE_PROJECT_HICONTRAST.png"
 				 style="width:150%;height:auto;"
 				 title="Click on Image for Description of Usage"
@@ -347,6 +346,18 @@ title: Math, Sonification, Plots
 		</style>
 	</div>
 	
+	<script>
+		document.getElementById("myContainer").onmouseover = function() {mouseOver()};
+		document.getElementById("myContainer").onmouseout = function() {mouseOut()};
+
+		function mouseOver() {
+		  document.getElementById("myContainer").style.color = "red";
+		}
+
+		function mouseOut() {
+		  document.getElementById("myContainer").style.color = "black";
+		}
+	</script>
 	
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
 	<audio id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
@@ -387,45 +398,45 @@ title: Math, Sonification, Plots
 			audio.volume = 0.4;
 
 			function play(button) {
-					var audio;
-					if (button == playSetTime) {
-						var audio = document.getElementById("audio_intro");
+				var audio;
+				if (button == playSetTime) {
+					var audio = document.getElementById("audio_intro");
+				}
+				else if (button == playCook) {
+					var audio = document.getElementById("audio_cook");
+				}
+				else if (button == playDefrost) {
+					var audio = document.getElementById("audio_defrost");
+				}
+				
+				if (!isPlayingIntro && !isPlayingCook && !isPlayingDefrost) {
+					if (audio == document.getElementById("audio_cook")) {
+						audio.loop = true;
+						isPlayingCook = true;
 					}
-					else if (button == playCook) {
-						var audio = document.getElementById("audio_cook");
+					else if (audio == document.getElementById("audio_defrost")) {
+						audio.loop = true;
+						isPlayingDefrost = true;
 					}
-					else if (button == playDefrost) {
-						var audio = document.getElementById("audio_defrost");
+					else if (audio == document.getElementById("audio_intro")) {
+						isPlayingIntro = true;
 					}
-					
-					if (!isPlayingIntro && !isPlayingCook && !isPlayingDefrost) {
-						if (audio == document.getElementById("audio_cook")) {
-							audio.loop = true;
-							isPlayingCook = true;
-						}
-						else if (audio == document.getElementById("audio_defrost")) {
-							audio.loop = true;
-							isPlayingDefrost = true;
-						}
-						else if (audio == document.getElementById("audio_intro")) {
-							isPlayingIntro = true;
-						}
-						audio.play();
+					audio.play();
+				}
+				
+				else if (!audio.ended) {
+					if (audio == document.getElementById("audio_cook")) {
+						isPlayingCook = false;
 					}
-					
-					else if (!audio.ended) {
-						if (audio == document.getElementById("audio_cook")) {
-							isPlayingCook = false;
-						}
-						else if (audio == document.getElementById("audio_defrost")) {
-							isPlayingDefrost = false;
-						}
-						else if (audio == document.getElementById("audio_intro")) {
-							isPlayingIntro = false;
-						}
-						// audio.pause();
-						audio.load();
+					else if (audio == document.getElementById("audio_defrost")) {
+						isPlayingDefrost = false;
 					}
+					else if (audio == document.getElementById("audio_intro")) {
+						isPlayingIntro = false;
+					}
+					// audio.pause();
+					audio.load();
+				}
 			}
 	</script>
 </body>
