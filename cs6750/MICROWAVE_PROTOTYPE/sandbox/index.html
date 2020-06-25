@@ -355,27 +355,19 @@ title: Math, Sonification, Plots
 	<script>
 		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		document.getElementById("myFunction").onmouseover = function() {mouseOverProject()};
-		document.getElementById("myFunction").onmouseout = function() {mouseOutProject()};
-		
-		function mouseOverProject() {
-		  var audio;
-		  audio = document.getElementById("program_microwave");
-		  audio.play();
-		}
-
-		function mouseOutProject() {
-		  var audio;
-		  audio = document.getElementById("program_microwave");
-		  audio.load();
-		}
 		
 		function mouseOverText() {
-		  document.getElementById("myWarning").style.color = "red";
+			var audio;
+			audio = document.getElementById("program_microwave");
+			audio.play();
+			document.getElementById("myWarning").style.color = "red";
 		}
 
 		function mouseOutText() {
-		  document.getElementById("myWarning").style.color = "green";
+			var audio;
+			audio = document.getElementById("program_microwave");
+			audio.load();
+			document.getElementById("myWarning").style.color = "green";
 		}
 	</script>
 	
