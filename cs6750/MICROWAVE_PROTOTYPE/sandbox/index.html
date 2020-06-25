@@ -346,25 +346,15 @@ title: Math, Sonification, Plots
 		</style>
 	</div>
 	
-	<script>
-		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
-		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-
-		function mouseOverText() {
-		  document.getElementById("myWarning").style.color = "red";
-		}
-
-		function mouseOutText() {
-		  document.getElementById("myWarning").style.color = "green";
-		}
-	</script>
-	
 	
 	<audio id="program_microwave" audio preload="auto" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/program_microwave.mp4"></audio>
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
 	<audio id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	<audio id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
+	
 	<script>
+		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
+		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
 		document.getElementById("myFunction").onmouseover = function() {mouseOverProject()};
 		document.getElementById("myFunction").onmouseout = function() {mouseOutProject()};
 		
@@ -378,6 +368,14 @@ title: Math, Sonification, Plots
 		  var audio;
 		  audio = document.getElementById("program_microwave");
 		  audio.load();
+		}
+		
+		function mouseOverText() {
+		  document.getElementById("myWarning").style.color = "red";
+		}
+
+		function mouseOutText() {
+		  document.getElementById("myWarning").style.color = "green";
 		}
 	</script>
 	
