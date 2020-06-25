@@ -347,14 +347,14 @@ title: Math, Sonification, Plots
 	</div>
 	
 	<script>
-		document.getElementById("myWarning").onmouseover = function() {mouseOver()};
-		document.getElementById("myWarning").onmouseout = function() {mouseOut()};
+		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
+		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
 
-		function mouseOver() {
+		function mouseOverText() {
 		  document.getElementById("myWarning").style.color = "red";
 		}
 
-		function mouseOut() {
+		function mouseOutText() {
 		  document.getElementById("myWarning").style.color = "green";
 		}
 	</script>
@@ -389,15 +389,16 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-		document.getElementById("myFunction").onmouseover = function() {mouseOver()};
-		document.getElementById("myFunction").onmouseout = function() {mouseOut()};
-		function mouseOver() {
+		document.getElementById("myFunction").onmouseover = function() {mouseOverProject()};
+		document.getElementById("myFunction").onmouseout = function() {mouseOutProject()};
+		
+		function mouseOverProject() {
 		  var audio;
 		  audio = document.getElementById("audio_cook");
 		  audio.play();
 		}
 
-		function mouseOut() {
+		function mouseOutProject() {
 		  var audio;
 		  audio = document.getElementById("audio_cook");
 		  audio.load();
