@@ -355,8 +355,10 @@ title: Math, Sonification, Plots
 	<script>
 		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
-		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
+		// document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
+		// document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
+		document.getElementById("myFunction").mouseenter = function() {mouseOverImage()};
+		document.getElementById("myFunction").mouseleave = function() {mouseOutImage()};
 		
 		function mouseOverImage() {
 		  audio = document.getElementById("program_microwave");
