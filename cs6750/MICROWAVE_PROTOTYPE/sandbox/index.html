@@ -389,55 +389,71 @@ title: Math, Sonification, Plots
 	</script>
 
 	<script>
-			var playSetTime = "playSetTime";
-			var playCook = "playCook";
-			var playDefrost = "playDefrost";
-			var isPlayingIntro = false;
-			var isPlayingCook = false;
-			var isPlayingDefrost = false;
-			audio.volume = 0.4;
+		document.getElementById("myContainer").onmouseover = function() {mouseOver()};
+		document.getElementById("myContainer").onmouseout = function() {mouseOut()};
+		function mouseOver() {
+		  document.getElementById("myWarning").style.color = "red";
+		  var audio;
+		  audio = document.getElementById("audio_cook");
+		  audio.play();
+		}
 
-			function play(button) {
-				var audio;
-				if (button == playSetTime) {
-					var audio = document.getElementById("audio_intro");
-				}
-				else if (button == playCook) {
-					var audio = document.getElementById("audio_cook");
-				}
-				else if (button == playDefrost) {
-					var audio = document.getElementById("audio_defrost");
-				}
+		function mouseOut() {
+		  document.getElementById("myWarning").style.color = "green";
+		  var audio;
+		  audio = document.getElementById("audio_cook");
+		  audio.load();
+		}
 				
-				if (!isPlayingIntro && !isPlayingCook && !isPlayingDefrost) {
-					if (audio == document.getElementById("audio_cook")) {
-						audio.loop = true;
-						isPlayingCook = true;
-					}
-					else if (audio == document.getElementById("audio_defrost")) {
-						audio.loop = true;
-						isPlayingDefrost = true;
-					}
-					else if (audio == document.getElementById("audio_intro")) {
-						isPlayingIntro = true;
-					}
-					audio.play();
-				}
-				
-				else if (!audio.ended) {
-					if (audio == document.getElementById("audio_cook")) {
-						isPlayingCook = false;
-					}
-					else if (audio == document.getElementById("audio_defrost")) {
-						isPlayingDefrost = false;
-					}
-					else if (audio == document.getElementById("audio_intro")) {
-						isPlayingIntro = false;
-					}
-					// audio.pause();
-					audio.load();
-				}
+		var playSetTime = "playSetTime";
+		var playCook = "playCook";
+		var playDefrost = "playDefrost";
+		var isPlayingIntro = false;
+		var isPlayingCook = false;
+		var isPlayingDefrost = false;
+		audio.volume = 0.4;
+
+		function play(button) {
+			var audio;
+			if (button == playSetTime) {
+				var audio = document.getElementById("audio_intro");
 			}
+			else if (button == playCook) {
+				var audio = document.getElementById("audio_cook");
+			}
+			else if (button == playDefrost) {
+				var audio = document.getElementById("audio_defrost");
+			}
+			
+			if (!isPlayingIntro && !isPlayingCook && !isPlayingDefrost) {
+				if (audio == document.getElementById("audio_cook")) {
+					audio.loop = true;
+					isPlayingCook = true;
+				}
+				else if (audio == document.getElementById("audio_defrost")) {
+					audio.loop = true;
+					isPlayingDefrost = true;
+				}
+				else if (audio == document.getElementById("audio_intro")) {
+					isPlayingIntro = true;
+				}
+				audio.play();
+			}
+			
+			else if (!audio.ended) {
+				if (audio == document.getElementById("audio_cook")) {
+					isPlayingCook = false;
+				}
+				else if (audio == document.getElementById("audio_defrost")) {
+					isPlayingDefrost = false;
+				}
+				else if (audio == document.getElementById("audio_intro")) {
+					isPlayingIntro = false;
+				}
+				// audio.pause();
+				audio.load();
+			}
+		}
 	</script>
 </body>
 <!-- footer><p><br>TESTING TESTING<br></p></footer -->
