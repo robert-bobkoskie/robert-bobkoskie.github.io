@@ -8,12 +8,12 @@ title: Math, Sonification, Plots
 	<title>CS 6750: Human-Computer Interaction</title>
 	<!-- link to main stylesheet -->
 	<script>
-		!!! Use when moving this index.html file down one directory !!!
+		!!! Use for Production !!!
 		<link rel="stylesheet" type="text/css" href="../css/main.css">
 		!!! Use for sandbox !!!
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	</script>
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<br><br>
 	
     <style>
@@ -333,8 +333,8 @@ title: Math, Sonification, Plots
 	</div>
 		
 	<div class="btn-group btn-group-lg">
-		<button type="button" class="btn_xl" onclick="setBG_Black(); play(playCook)" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
-		<button type="button" class="btn_xl" onclick="setBG_White(); play(playDefrost)" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
+		<button id="cookButton" type="button" class="btn_xl" onclick="setBG_Black(); play(playCook)" style="position: relative; background-color: red; color: black; float:left;"> COOK </button>
+		<button id="defrostButton" type="button" class="btn_xl" onclick="setBG_White(); play(playDefrost)" style="position: relative; background-color: #ADD8E6; color: black; float:left;"> DEFROST </button>
 		<style>
 			<button type="button" class="btn btn-primary">  COOK </button>
 			<button type="button" class="btn btn-primary">DEFROST</button>	
@@ -348,19 +348,58 @@ title: Math, Sonification, Plots
 	
 	
 	<audio id="program_microwave" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/program_microwave.mp4"></audio>
+	<audio id="audio_time_button" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/COOK_BUTTON.mp4"></audio>
+	<audio id="audio_cook_button" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/DEFROST_BUTTON.mp4"></audio>
+	<audio id="audio_defrost_button" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/SET_TIME_BUTTON.mp4"></audio>
 	<audio id="audio_intro" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/INCREASE_TIME.mp4"></audio>
 	<audio id="audio_cook" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_cook_sound.mp4"></audio>
 	<audio id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
 	
 	<script>
-		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
 		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
+		document.getElementById("myAnimation").onmouseout = function() {mouseOutTimeButton()};
+		document.getElementById("cookButton").onmouseout = function() {mouseOutCookButton()};
+		document.getElementById("defrostButton").onmouseout = function() {mouseOutDefrostButton()};
+		
+		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
+		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
+		document.getElementById("myAnimation").onmouseover = function() {mouseOverTimeButton()};
+		document.getElementById("cookButton").onmouseover = function() {mouseOverCookButton()};
+		document.getElementById("defrostButton").onmouseover = function() {mouseOverDefrostButton()};
+				
+		function mouseOverTimeButton() {
+		  audio = document.getElementById("audio_time_button");
+		  audio.play();
+		}
+
+		function mouseOutTimeButton() {
+		  audio = document.getElementById("audio_time_button");
+		  audio.load();
+		}
+		
+		function mouseOverCookButton() {
+		  audio = document.getElementById("audio_cook_button");
+		  audio.play();
+		}
+
+		function mouseOutCookButton() {
+		  audio = document.getElementById("audio_cook_button");
+		  audio.load();
+		}
+		
+		function mouseOverDefrostButton() {
+		  audio = document.getElementById("audio_defrost_button");
+		  audio.play();
+		}
+
+		function mouseOutDefrostButton() {
+		  audio = document.getElementById("audio_defrost_button");
+		  audio.load();
+		}
 		
 		function mouseOverImage() {
 		  audio = document.getElementById("program_microwave");
-		  audio.play();
 		  audio.play();
 		}
 
