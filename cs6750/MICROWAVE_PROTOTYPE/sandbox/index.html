@@ -8,7 +8,7 @@ title: Math, Sonification, Plots
 	<title>CS 6750: Human-Computer Interaction</title>
 	<!-- link to main stylesheet -->
 	<script>
-		!!! Use when moving this index.html file down one directory !!!
+		!!! Use for Production !!!
 		<link rel="stylesheet" type="text/css" href="../css/main.css">
 		!!! Use for sandbox !!!
 		<link rel="stylesheet" type="text/css" href="../../css/main.css">
@@ -361,46 +361,45 @@ title: Math, Sonification, Plots
 		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
 		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
 		
-		document.getElementById("myAnimation").onmouseout = function() {mouseOutImage()};
-		document.getElementById("cookButton").onmouseout = function() {mouseOutImage()};
-		document.getElementById("defrostButton").onmouseout = function() {mouseOutImage()};
+		document.getElementById("myAnimation").onmouseout = function() {mouseOverTimeButton()};
+		document.getElementById("myAnimation").onmouseout = function() {mouseOutTimeButton()};
+		document.getElementById("cookButton").onmouseout = function() {mouseOverCookButton()};
+		document.getElementById("cookButton").onmouseout = function() {mouseOutCookButton()};
+		document.getElementById("defrostButton").onmouseout = function() {mouseOverDefrostButton()};
+		document.getElementById("defrostButton").onmouseout = function() {mouseOutDefrostButton()};
 		
-		function mouseOverImage() {
+		function mouseOverTimeButton() {
 		  audio = document.getElementById("audio_time_button");
-		  audio.load();
 		  audio.play();
 		}
 
-		function mouseOutImage() {
+		function mouseOutTimeButton() {
 		  audio = document.getElementById("audio_time_button");
 		  audio.load();
 		}
 		
-		function mouseOverImage() {
+		function mouseOverCookButton() {
 		  audio = document.getElementById("audio_cook_button");
-		  audio.load();
 		  audio.play();
 		}
 
-		function mouseOutImage() {
+		function mouseOutCookButton() {
 		  audio = document.getElementById("audio_cook_button");
 		  audio.load();
 		}
 		
-		function mouseOverImage() {
+		function mouseOverDefrostButton() {
 		  audio = document.getElementById("audio_defrost_button");
-		  audio.load();
 		  audio.play();
 		}
 
-		function mouseOutImage() {
+		function mouseOutDefrostButton() {
 		  audio = document.getElementById("audio_defrost_button");
 		  audio.load();
 		}
 		
 		function mouseOverImage() {
 		  audio = document.getElementById("program_microwave");
-		  audio.load();
 		  audio.play();
 		}
 
