@@ -356,18 +356,18 @@ title: Math, Sonification, Plots
 	<audio id="audio_defrost" src="https://robert-bobkoskie.github.io/cs6750/MICROWAVE_PROTOTYPE/sounds/microwave_defrost_sound.mp4"></audio>
 	
 	<script>
-		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
 		document.getElementById("myWarning").onmouseout = function() {mouseOutText()};
-		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
 		document.getElementById("myFunction").onmouseout = function() {mouseOutImage()};
-		
-		document.getElementById("myAnimation").onmouseout = function() {mouseOverTimeButton()};
 		document.getElementById("myAnimation").onmouseout = function() {mouseOutTimeButton()};
-		document.getElementById("cookButton").onmouseout = function() {mouseOverCookButton()};
 		document.getElementById("cookButton").onmouseout = function() {mouseOutCookButton()};
-		document.getElementById("defrostButton").onmouseout = function() {mouseOverDefrostButton()};
 		document.getElementById("defrostButton").onmouseout = function() {mouseOutDefrostButton()};
 		
+		document.getElementById("myWarning").onmouseover = function() {mouseOverText()};
+		document.getElementById("myFunction").onmouseover = function() {mouseOverImage()};
+		document.getElementById("myAnimation").onmouseover = function() {mouseOverTimeButton()};
+		document.getElementById("cookButton").onmouseover = function() {mouseOverCookButton()};
+		document.getElementById("defrostButton").onmouseover = function() {mouseOverDefrostButton()};
+				
 		function mouseOverTimeButton() {
 		  audio = document.getElementById("audio_time_button");
 		  audio.play();
