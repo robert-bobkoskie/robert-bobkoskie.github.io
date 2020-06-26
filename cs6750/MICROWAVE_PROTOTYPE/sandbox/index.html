@@ -232,8 +232,7 @@ title: Math, Sonification, Plots
 				height: 71px; 
 				/* max-width: 100%; */
 				/* height: auto; */
-				
-				/* cursor: move; */
+				cursor: move;
                 /* position: relative; */
 				position: absolute;
 				/* position: sticky; */
@@ -319,7 +318,9 @@ title: Math, Sonification, Plots
 				<div id ="myAnimation"></div>
 				<img id="myAnimation" class="center fit myContainer">
 			</style>
-			<img id="myAnimation"/>
+			<div id="dragDiv">
+				<img id="myAnimation"/>
+			</div>
 		</div>
 		
 		<div class="floatWarning" id="myWarning">
@@ -350,7 +351,7 @@ title: Math, Sonification, Plots
 	
 	<script>
 		//Make the DIV element draggagle:
-		dragElement(document.getElementById("myAnimation"));
+		dragElement(document.getElementById("dragDiv"));
 
 		function dragElement(elmnt) {
 			var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
