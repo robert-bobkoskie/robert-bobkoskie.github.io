@@ -291,7 +291,7 @@ title: Math, Sonification, Plots
 				// get the mouse cursor position at startup:
 				pos3 = e.clientX;
 				pos4 = e.clientY;
-				if (pos3 > 100px || pos4 > 100px) {
+				if (pos3 < 100px || pos4 < 100px) {
 					closeDragElement;
 				}
 				document.onmouseup = closeDragElement;
