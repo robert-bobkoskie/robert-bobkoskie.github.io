@@ -248,7 +248,7 @@ title: Math, Sonification, Plots
 				<div id ="myAnimation"></div>
 				<img id="myAnimation" class="center fit myContainer">
 			</style>
-			<img id="myAnimation"/>
+			<img id="myAnimation" class="center fit myContainer">
 		</div>
 	</div>
 		
@@ -307,9 +307,6 @@ title: Math, Sonification, Plots
 				// set the element's new position:
 				elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
 				elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-				if ((elmnt.offsetTop - pos2) < 5 || (elmnt.offsetLeft - pos1) < 5) {
-					closeDragElement;
-				}
 			}
 
 			function closeDragElement() {
