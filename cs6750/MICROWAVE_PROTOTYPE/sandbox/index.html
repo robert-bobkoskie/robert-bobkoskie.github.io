@@ -294,11 +294,6 @@ title: Math, Sonification, Plots
 				document.onmouseup = closeDragElement;
 				// call a function whenever the cursor moves:
 				document.onmousemove = elementDrag;
-				
-				function DEBUG() {
-					var number = "123";
-					document.getElementById("myDebug").innerHTML = number;
-				}
 			}
 
 			function elementDrag(e) {
@@ -318,6 +313,11 @@ title: Math, Sonification, Plots
 				/* stop moving when mouse button is released:*/
 				document.onmouseup = null;
 				document.onmousemove = null;
+			}
+			
+			function DEBUG() {
+				var number = "123";
+				document.getElementById("myDebug").innerHTML = number;
 			}
 		}
 	</script>
