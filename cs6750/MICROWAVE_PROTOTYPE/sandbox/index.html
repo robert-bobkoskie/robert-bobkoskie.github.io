@@ -294,6 +294,11 @@ title: Math, Sonification, Plots
 				document.onmouseup = closeDragElement;
 				// call a function whenever the cursor moves:
 				document.onmousemove = elementDrag;
+				
+				function DEBUG() {
+					var number = "123";
+					document.getElementById("myDebug").innerHTML = number;
+				}
 			}
 
 			function elementDrag(e) {
@@ -468,4 +473,7 @@ title: Math, Sonification, Plots
 		}
 	</script>
 </body>
-<!-- footer><p><br>TESTING TESTING<br></p></footer -->
+
+<footer onload="DEBUG()">
+	<h1>"The value for number is: " <span id="myDebug"></span></h1>
+</footer>
