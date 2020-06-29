@@ -240,7 +240,8 @@ title: Math, Sonification, Plots
 				/* top: 20%; */
 				/* left: 1%; */
 				top: 1000px;
-				margin-left: 1.25%;
+				margin-left: 50px;
+				/* margin-left: 1.25%; */
 				/* margin-top: 75%; */
 				/* overflow: hidden; */
 				/* object-fit: contain; */
@@ -360,8 +361,8 @@ title: Math, Sonification, Plots
 				e = e || window.event;
 				e.preventDefault();
 				// get the mouse cursor position at startup:
-				pos1 = e.clientX;
-				pos2 = e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
 				document.onmouseup = closeDragElement;
 				// call a function whenever the cursor moves:
 				document.onmousemove = elementDrag;
