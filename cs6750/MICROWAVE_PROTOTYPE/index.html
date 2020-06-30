@@ -87,84 +87,7 @@ title: Math, Sonification, Plots
         button:hover {
                 background-color: #3e8e41;
         }
-
-        .volDec {
-            background-color: #8A2BE2; /* BlueViolet background */
-            color: white; /* White text */
-            width: 0;
-            height: 0;
-            font-size: 18px;
-            font-weight: bold;
-			/* text-align: left; */
-            /* padding: 0px 5px; */
-            margin-right: 8px;
-            border-top: 24px solid transparent;
-            border-right: 36px solid #000;
-            border-bottom: 24px solid transparent;
-        }
-
-        .volInc {
-            background-color: #8A2BE2; /* BlueViolet background */
-            color: white; /* White text */
-			width:  0;
-            height: 0;
-			/^ display: inline-block */
-            /* text-align: left; */
-            font-size: 18px;
-            font-weight: bold;
-            border-top: 24px solid transparent;
-            border-left: 36px solid #000;
-            border-bottom: 24px solid transparent;
-        }
-
-        .play {
-            background-color: #4CAF50; /* Green background */
-            color: white; /* White text */
-            /* color: #FFFFFF; */
-            text-align: left;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 0px 8px;
-            margin-right:16px;
-            box-sizing: border-box;
-            /* display: inline-block */
-			/* width: 74px; */
-			/* background: transparent; */
-            width:  205;
-            height: 74px;
-
-            // transition: 100ms all ease;
-            cursor: pointer;
-
-            border-color: transparent transparent transparent #202020;
-            border-style: solid;
-            border-width: 37px 0px 37px 60px;
-        }
-
-        .pause {
-            background-color: #4CAF50; /* Green background */
-            color: white; /* White text */
-            // color: #FFFFFF;
-            text-align: left;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 0px 8px;
-            margin-right:16px;
-            // background: transparent;
-            box-sizing: border-box;
-            // display: inline-block
-			// width: 74px;
-            width:  205;
-            height: 74px;
-
-            // transition: 100ms all ease;
-            cursor: pointer;
-            
-            border-color: #202020;
-            border-style: double;
-            border-width: 0px 0px 0px 60px;
-        }
-
+		
         div {
                 text-align: justify;
                 text-justify: inter-word;
@@ -192,10 +115,11 @@ title: Math, Sonification, Plots
         }
 
         .floatWarning {
-			height: 465px;
+			height: 150px;
             /* width: 500px; */
-			width: 30%;
-			float: right;
+			width: 80%;
+			float: bottom;
+			/* float: right; */
             position:relative;
             /* position:absolute; */
             overflow-y: scroll;
@@ -239,8 +163,8 @@ title: Math, Sonification, Plots
 				/* position: sticky; */
 				/* top: 20%; */
 				/* left: 1%; */
-				top: 1000px;
-				left: 150px;
+				top: 1018px;
+				left: 170px;
 				/* margin-left: 1.25%; */
 				/* margin-top: 75%; */
 				/* overflow: hidden; */
@@ -252,14 +176,18 @@ title: Math, Sonification, Plots
 		}
 		
 		.btn_xl {
+				position: absolute;
+				top: 14px;
+				left: 150px;
 				padding: 10px 20px;
 				background-color: #FFFFFF; /* Black background */
 				color: #FFFFFF; /* Orange text */
 				text-align: center;
-				font-size: 18px;
+				font-size: 48px;
 				font-weight: bold;
 				border-radius: 10px;
-				width:33%;
+				height: 190px;
+				width: 50%;
 		}
     </style>
 </head>
@@ -318,20 +246,10 @@ title: Math, Sonification, Plots
 				 onclick = "change(); play(playSetTime);"/>
 			<style>
 				<div id ="myAnimation"></div>
+				<img id="myAnimation"/>
 				<img id="myAnimation" class="center fit myContainer">
 			</style>
-			<img id="myAnimation"/>
-		</div>
-		
-		<div class="floatWarning" id="myWarning">
-			<div><p>
-				This <strong>Wireframe</strong> is a Proof of Concept (POC) design for a novel microwave interface.
-				The primary objective of this interface is to improve user interaction with
-				a microwave for the Visually Impaired (VI) community. This interface will
-				evolve as additional <strong>Needfinding</strong> is integrated into an <i>agile (iterative)
-				design process</i>. The final product will be a much larger form-factor for the UI that's better suited
-				for smartphone displays.
-			</p></div>
+			<div id ="myAnimation"></div>
 		</div>
 	</div>
 		
@@ -347,6 +265,17 @@ title: Math, Sonification, Plots
 			<button class="volDec" onclick="vol_dec()">-</button>
 			<button class="volInc" onclick="vol_inc()">+ VOLUME</button>
 		</style>
+	</div>
+	
+	<div class="floatWarning" id="myWarning">
+		<div><p>
+			This <strong>Wireframe</strong> is a Proof of Concept (POC) design for a novel microwave interface.
+			The primary objective of this interface is to improve user interaction with
+			a microwave for the Visually Impaired (VI) community. This interface will
+			evolve as additional <strong>Needfinding</strong> is integrated into an <i>agile (iterative)
+			design process</i>. The final product will be a much larger form-factor for the UI that's better suited
+			for smartphone displays.
+		</p></div>
 	</div>
 	
 	<script>
