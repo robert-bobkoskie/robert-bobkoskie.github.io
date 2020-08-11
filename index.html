@@ -1,0 +1,127 @@
+---
+layout: default
+title: Research: Machine Learning, Computer Vision, Human Computer Interaction
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<img id ="gtech" class="center fit" style="width:500px;height:101px" src="images\gtech.png">
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<br><br>
+	</head>
+
+	<style>
+			div { 
+				text-align: justify; 
+				text-justify: inter-word; 
+			} 
+
+			.btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				float: left; /* Float the buttons side by side */
+			}
+
+			/* Clear floats (clearfix hack) */
+			.btn-group button:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+			
+			.dropdown {
+				position: relative;
+				display: inline-block;
+				background-color: #f9f9f9;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				# background-color: #f9f9f9;
+				min-width: 190px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				padding: 30px 5px 10px 10px;
+				# padding: 0;
+				z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			
+			.fit {  /* set relative picture size */
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.center {
+				display: block;
+				margin: auto;
+			}
+	</style>
+
+	<body>
+		<nav><ul>
+			<li><a href="/" target="_self">Home</a></li>	        	        	
+		</ul></nav>
+	
+		<div><p>
+			Select High Contrast, or Standard (STD) Contrast for the webpage.
+		</div></p>
+		
+		<div class="btn-group">
+			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
+			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
+			
+			<div class="dropdown">
+				<button class="dropbtn">Prototypes and Research Papers</button>
+				<div class="dropdown-content">
+					<script> HIDING THIS CODE:
+							<h5 class="dropdown-header">GitHub Hosted Web Sites</h5>
+							<li><a class="dropdown-item" href="/cs6460" title="cs6460">cs6460</a></li>
+							<li><a class="dropdown-item" href="https://rbobkoskie3.github.io/" title="HCI Research" target="_blank">HCI Research</a></li>
+							<li><a class="dropdown-item" href="#" title="Future Use">LINK</a></li>
+					</script>
+					<h5 class="dropdown-header">Research</h5>
+					<li><a class="dropdown-item" href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a></li>
+					<li><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a></li>
+					<li><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a></li>
+					<h5 class="dropdown-header">Computer Vision (CV)</h5>
+					<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a></li>
+					<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			var gtech =  document.getElementById("gtech");
+			function setBG_Black() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+				document.body.style.color = "yellow";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+			}
+			function setBG_White() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+				document.body.style.color = "black";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+			}
+		</script>
+	</body>
+</html>
