@@ -2,5 +2,6 @@ name: Robert Bobkoskie
 url: https://robert-bobkoskie.github.io
 markdown: kramdown
 
+source: app
 include: [_layouts]
 exclude: [README.md]
