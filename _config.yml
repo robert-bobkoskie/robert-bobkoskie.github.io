@@ -1,6 +1,7 @@
 name: Robert Bobkoskie
+url: https://robert-bobkoskie.github.io/
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+# permalink: /blog/:year/:month/:day/:title
 
 defaults:
  -
