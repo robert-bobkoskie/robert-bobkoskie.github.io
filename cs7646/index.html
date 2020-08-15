@@ -8,6 +8,28 @@
 	<nav><ul>
 		<a href="/" target="_self">Home</a>	                	
 	</ul></nav>
+	<div class="btn-group">
+			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
+			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
+	</div>
+	<script>
+			var gtech =  document.getElementById("gtech");
+			function setBG_Black() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+				document.body.style.color = "yellow";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+			}
+			function setBG_White() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+				document.body.style.color = "black";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+			}
+	</script>
+	
+	<div><p>
+			Select High Contrast, or Standard (STD) Contrast for the webpage.
+	</div></p>
+	
     <h1>About the Research</h1>
     <div><p>
         The work originates from
