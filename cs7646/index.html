@@ -1,6 +1,31 @@
 <head>
     <style>
-        <h1>Maching Learning Papers</h1>
+        .btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				float: left; /* Float the buttons side by side */
+			}
+		
+		/* Clear floats (clearfix hack) */
+			.btn-group button:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
     </style>
 </head>
 
@@ -8,6 +33,9 @@
 	<nav><ul>
 		<a href="/" target="_self">Home</a>	                	
 	</ul></nav>
+	<div><p>
+			Select High Contrast, or Standard (STD) Contrast for the webpage.
+	</div></p>
 	<div class="btn-group">
 			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
 			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
@@ -25,10 +53,6 @@
 				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
 			}
 	</script>
-	
-	<div><p>
-			Select High Contrast, or Standard (STD) Contrast for the webpage.
-	</div></p>
 	
     <h1>About the Research</h1>
     <div><p>
