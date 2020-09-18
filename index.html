@@ -22,6 +22,17 @@
 				cursor: pointer; /* Pointer/hand icon */
 				float: left; /* Float the buttons side by side */
 			}
+			
+			.btn-group verticleButton {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				display: block; /* Make the buttons appear below each other */
+			}
 
 			/* Clear floats (clearfix hack) */
 			.btn-group button:after {
@@ -36,6 +47,9 @@
 
 			/* Add a background color on hover */
 			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+			.btn-group verticleButton:hover {
 				background-color: #3e8e41;
 			}
 			
@@ -105,6 +119,12 @@
 					<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
 				</div>
 			</div>
+		</div>
+		
+		<div class="btn-group">
+			<verticleButton>Apple</verticleButton>
+			<verticleButton>Samsung</verticleButton>
+			<verticleButton>Sony</verticleButton>
 		</div>
 		
 		<script>
