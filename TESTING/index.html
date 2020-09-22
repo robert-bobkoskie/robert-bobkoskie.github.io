@@ -1,141 +1,158 @@
-<head>
-	<img id ="gtech" class="center fit" style="width:500px;height:101px" src="images/gtech.png">
-	<!-- link to main stylesheet -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<br><br>
-</head>
+<html>
+	<head>
+		<img id ="gtech" class="center fit" style="width:500px;height:101px" src="images\gtech.png">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<br><br>
+	</head>
 
-<style>
-	.btn-group button {
-			background-color: #4CAF50; /* Green background */
-			border: 1px solid green; /* Green border */
-			color: white; /* White text */
-			font-weight: bold;
-			font-size: 18px;
-			padding: 10px 24px; /* Some padding */
-			cursor: pointer; /* Pointer/hand icon */
-			float: left; /* Float the buttons side by side */
-		}
+	<style>
+			div { 
+				text-align: justify; 
+				text-justify: inter-word; 
+			} 
+
+			.btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				float: left; /* Float the buttons side by side */
+			}
+			
+			.btn-group verticleButton {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				display: block; /* Make the buttons appear below each other */
+			}
+
+			/* Clear floats (clearfix hack) */
+			.btn-group button:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+			.btn-group verticleButton:hover {
+				background-color: #3e8e41;
+			}
+			
+			.dropdown {
+				background-color: black;
+				border: 1px solid orange;
+				color: orange;
+				font-weight: bold;
+				font-size: 18px;
+				position: relative;
+				display: inline-block;
+				float: left;
+				min-width: 150px;
+			}
+
+			.dropdown-content {
+				/* z-index: 1; */
+				display: none;
+				position: relative;
+				/* position: relative; */
+				float: left;
+				min-width: 150px;
+				/* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+				padding: 30px 5px 10px 10px;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			
+			.fit {  /* set relative picture size */
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.center {
+				display: block;
+				margin: auto;
+			}
+	</style>
+
+	<body>
+		<nav><ul>
+			<li><a href="/" target="_self">Home</a></li>	        	        	
+		</ul></nav>
 	
-	/* Clear floats (clearfix hack) */
-		.btn-group button:after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-
-		.btn-group button:not(:last-child) {
-			border-right: none; /* Prevent double borders */
-		}
-
-		/* Add a background color on hover */
-		.btn-group button:hover {
-			background-color: #3e8e41;
-		}
-</style>
-
-<body>
-	<nav><ul>
-		<a href="/" target="_self">Home</a>	                	
-	</ul></nav>
-	<div><p>
+		<div><p>
 			Select High Contrast, or Standard (STD) Contrast for the webpage.
-	</div></p>
-	<div class="btn-group">
+		</div></p>
+		
+		<div class="btn-group">
 			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
 			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
-	</div>
-	<br><br>
-	<script>
+		</div>
+		<br><br><br>
+		<script> HIDING THIS CODE:
+			<div class="btn-group">
+				<button type="button" onclick="location.href='devops';" class="btn btn-primary">DEV OPS</button>
+				<div class="dropdown">
+					<button class="dropbtn">PROTOTYPES and RESEARCH</button>
+					<div class="dropdown-content">
+						<h5 class="dropdown-header">Research</h5>
+						<li><a class="dropdown-item" href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a></li>
+						<li><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a></li>
+						<li><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a></li>
+						<h5 class="dropdown-header">Computer Vision (CV)</h5>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a></li>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
+					</div>
+				</div>
+			</div>
+		</script>
+				
+		<div class="btn-group">
+			<button class="verticleButton" onclick="location.href='portfolio';">SOFTWARE DEVELOPMENT PORTFOLIO</button>
+			<button class="verticleButton" onclick="location.href='devops';">DEV OPS</button>
+			<div class="dropdown">
+				<button class="verticleButton">PROTOTYPES and RESEARCH</button>
+				<div class="dropdown-content">
+					<h5 class="dropdown-header">Research</h5>
+					<li><a class="dropdown-item" href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a></li>
+					<li><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a></li>
+					<li><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a></li>
+					<h5 class="dropdown-header">Computer Vision (CV)</h5>
+					<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a></li>
+					<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
+				</div>
+			</div>
+		</div>
+		
+		<script>
 			var gtech =  document.getElementById("gtech");
 			function setBG_Black() {
 				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
 				document.body.style.color = "yellow";
-				gtech.src = "images/gtech_HCS.png";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
 			}
 			function setBG_White() {
 				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
 				document.body.style.color = "black";
-				gtech.src = "images/gtech.png";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
 			}
-	</script>
+		</script>
 	
-	<br><br>
-	<div><p>
-		This page presents a sample of my development activities with respect to the software development lifecycle. I've included work derived from several projects that highlight: UX Design, Machine Learning (Reinforcement Learning), Artificial Intelligence (Cognitive Systems), Computer Vision and a Java based Syntax Encoder.
-    </p></div><br>
-	
-	
-	<h1>PROJECTS</h1>
-	<ul style="list-style-type: upper-roman;">
-		<li><a href="#UX DESIGN">UX DESIGN</a></li>
-		<li><a href="#COMPUTER VISION">COMPUTER VISION</a></li>
-		<li><a href="#ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</a></li>
-		<li><a href="#JAVA ENCODER">JAVA ENCODER</a></li>
-		<li><a href="#MACHINE LEARNING">MACHINE LEARNING</a></li>
-  		
-	</ul><br><br><br>
-	
-    <h2 id="UX DESIGN">UX DESIGN</h2>
-    <div><p>
-		A UX concept to improve the ergonomics of human-system interaction for visually impaired students with fundamental Mathematical Graphs taught in Algebra lessons. I propose "Sonification" the ise of sound, in combination with enhanced visual imaging techniques to augment and improve the transmission and retention of information.
-			<ul style="list-style: none;">
-				<li><a href="https://rbobkoskie3.github.io/" title="Explore a Human-Computer Interaction (HCI) Interface Prototype for Sonification" target="_blank">DESIGN, DEVELOPMENT, IMPLEMENTATION, EVALUATION: Human-Computer Interaction (HCI)</a></li>
-				<li><a href="docs/AssistiveTechnology_VisuallyImpaired.pdf" title="Explore a Human-Computer Interaction (HCI) Interface Prototype for Sonification" target="_blank">RESULTS DOCUMENTATION: Human-Computer Interaction (HCI)</a></li>
-			</ul>
-	</p></div><br><br>
-	
-	<h2 id="COMPUTER VISION">COMPUTER VISION</h2>
-    <div><p>
-		A project exploring Computer Vision implemented using Python (OpenCV), NumPy and FFmpeg.
-			<ul style="list-style: none;">
-				<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Explore Computer Vision (CV) Prototype" target="_blank">ANALYSIS, DESIGN, IMPLEMENTATION: Computer Vision Phase-1</a></li>
-				<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Explore Computer Vision (CV) Prototype" target="_blank">ANALYSIS, DESIGN, IMPLEMENTATION: Computer Vision Phase-2</a></li>
-				<li><a href="docs/robert-bobkoskie_FINALpy.zip" title="Explore Computer Vision" target="_blank">CODE, DEVELOPMENT: Computer Vision</a></li>
-				<li><a href="docs/CV_PAPER.pdf" title="Explore Computer Vision" target="_blank">RESULTS DOCUMENTATION: Computer Vision</a></li>
-			</ul>
-	</p></div><br><br>
-		
-	<h2 id="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</h2>
-    <div><p>
-		A study of  the concepts, methods, and prominent issues in Knowledge-Based Artificial Intelligence and the application of these concepts to the design of knowledge-based AI agents. KBAI elucidate the relationship between knowledge-based artificial intelligence and the study of human cognition. I developed an AI Agent to solve Raven's Progressive Matrices (RPM). RPM is a nonverbal test that measures abstract reasoning and provides an estimate of fluid intelligence.
-		<a href="images/RPM_EXAMPLE.png"
-		   target="_blank">Sample problem: Raven's Progressive Matrices (RPM)</a>
-		<ul style="list-style: none;">
-			<li><a href="docs/Project3-rbobkoskie3-Python2.zip" title="Explore Artificial Intelligence" target="_blank">CODE, DEVELOPMENT: Artificial Intelligence</a></li>
-			<li><a href="docs/Project3_Reflection-rbobkoskie3.pdf" title="Explore Artificial Intelligence" target="_blank">RESULTS DOCUMENTATION: Artificial Intelligence</a></li>
-			<li><a href="docs/AI_README.txt" title="Explore Artificial Intelligence" target="_blank">TRAINING, OPERATION, MAINTENANCE: Artificial Intelligence</a></li>
-		</ul>
-	</p></div><br><br>
-	
-	<h2 id="JAVA ENCODER">JAVA ENCODER</h2>
-	<div><p>
-		A UX concept to improve the ergonomics of human-system interaction for visually impaired students with fundamental Mathematical Graphs taught in Algebra lessons. I propose "Sonification" the ise of sound, in combination with enhanced visual imaging techniques to augment and improve the transmission and retention of information.
-			<ul style="list-style: none;">
-				<li><a href="docs/JavaEncoderRequirements1.pdf" title="Explore a Java Encoder" target="_blank">REQUIREMENTS DEV-1: Java Encoder</a></li>
-				<li><a href="docs/JavaEncoderRequirements2.pdf" title="Explore a Java Encoder" target="_blank">REQUIREMENTS DEV-2: Java Encoder</a></li>
-				<li><a href="docs/JavaEncoderCodeWithJunitTestCases.zip" title="Explore a Java Encoder" target="_blank">CODE, DEVELOPMENT, TEST: Java Encoder</a></li>
-			</ul>
-	</p></div><br><br>
-	
-	<h2 id="MACHINE LEARNING">MACHINE LEARNING</h2>
-	<div><p>
-		This project explores Reinforcement Learning (RL) through the evaluation of both two, and three-dimensional Grid-World MDPs using Markov Decision Processes (MDP), Policy/Value Iteration and Q-Learning, MDP problem-solving methods utilized the parameters: {Discount, Noise, Living Reward, for Policy/Value Iteration}, and {α: Learning Rate, ε: Action Selection for Q-Learning}. For reference, a Grid-World is defined as a deterministic game using Policy/Value Iteration to evaluate Q-Learning/Reinforcement Learning. The grid is typically a two-dimensional {x, y} space comprised of cells hosting: values for reward, barriers, and start/end locations. I chose to develop a three-dimensional grid with {x, y, z} to compare a more complex learning task vs. the two-dimensional space.
-			<ul style="list-style: none;">
-				<li><a href="docs/RL_REQ_MarkovDecisionProcesses.pdf" title="Explore Reinforcement Learning" target="_blank">REQUIREMENTS: Reinforcement Learning</a></li>
-				<li><a href="docs/RL_rbobkoskie3.zip" title="Explore Reinforcement Learning" target="_blank">CODE, DEVELOPMENT: Reinforcement Learning</a></li>
-				<li><a href="docs/RL_rbobkoskie3-analysis.pdf" title="Explore Reinforcement Learning" target="_blank">RESULTS DOCUMENTATION: Reinforcement Learning</a></li>
-				<li><a href="docs/RL_README.txt" title="Explore Reinforcement Learning" target="_blank">TRAINING, OPERATION, MAINTENANCE: Reinforcement Learning</a></li>
-			</ul>
-	</p></div><br><br>
-
-	<footer>
-		<ul>
-			<p>I'm interested in further discussion regarding this work. Enter comments/questions in textbox and click "Send".</p>
-			<form action="mailto:rbobkoskie3@gatech.edu" method="GET">
-				<textarea name="body"></textarea>
-				<input type="submit" value="Send" />
-			</form>
-		</ul>
-	</footer>
-</body>
+	</body>
+</html>
