@@ -175,31 +175,33 @@
 		
 				<div class="dropdown-content" id="myDropdown">
 					<h5 class="dropdown-header">RESEARCH</h5>
-					<a href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a>
-					<a href="#">Link 2</a>
-					<a href="#">Link 3</a>
+						<a href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a>
+						<a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a>
+						<a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a>
+					<h5 class="dropdown-header">COMPUTER VISION (CV)</h5>
+						<a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a>
+						<a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a>
 				</div>
 			</div> 
 		</div>
 
+		<script>
+			/* When the user clicks on the button, 
+			   toggle between hiding and showing the dropdown content */
+			function myFunction_Dropdown() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction_Dropdown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
-</script>
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+				if (!e.target.matches('.dropbtn')) {
+					var myDropdown = document.getElementById("myDropdown");
+					if (myDropdown.classList.contains('show')) {
+						myDropdown.classList.remove('show');
+					}
+				}
+			}
+		</script>
 		
 		<script>
 			var gtech =  document.getElementById("gtech");
