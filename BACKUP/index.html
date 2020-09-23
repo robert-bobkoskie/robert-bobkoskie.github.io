@@ -1,31 +1,221 @@
----
-layout: default
-title: Math, Sonification, Plots
----
+<html>
+	<head>
+		<img id ="gtech" class="center fit" style="width:500px;height:101px" src="images\gtech.png">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<br><br>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
 
-<head>
-    <style>
-        <h1>About the Project</h1>
-    </style>
-</head>
+	<style>
+			div { 
+				text-align: justify; 
+				text-justify: inter-word; 
+			} 
 
-<body>
-    <h1>About the Project</h1>
-    <div><p>
-        This website is part of a human factors study to improve ergonomics for the visually impaired.
-        The concept originates from a
-        <a href="https://www.omscs.gatech.edu/cs-6460-educational-technology"
-        target="_blank">CS 6460: Educational Technology</a>
-        class project. In addition to this website, I have built a
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0ICzX_vJjHwATkwU86fbXTqOgTGyMJfLvh73lRyYgIZT9Xg/viewform"
-        target="_blank">survey</a>
-        to gather information on the High Contrast Settings and Sonification implemented on the website.
-    </p></div>
-    <br>
-    <div><p>
-        I encourage visitors to peruse the Math Plots: LINES, CIRCLES, PARABOLAS, HYPERBOLAS, and play with the
-        High Contrast Settings and Sonification. Please provide comments and suggestions, and following your visit, kindly take the
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0ICzX_vJjHwATkwU86fbXTqOgTGyMJfLvh73lRyYgIZT9Xg/viewform"
-        target="_blank">survey</a>.
-    </p></div>
-</body>
+			.btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				font-weight: bold;
+				font-size: 18px;
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				float: left; /* Float the buttons side by side */
+			}
+			
+			/* Clear floats (clearfix hack) */
+			.btn-group button:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.btn-group button:not(:last-child) {
+				border-right: none; /* Prevent double borders */
+			}
+
+			/* Add a background color on hover */
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+			
+			.navbar {
+				overflow: hidden;
+				background-color: #333;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.navbar a {
+				float: left;
+				font-size: 16px;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+
+			.dropdown {
+				float: left;
+				overflow: hidden;
+			}
+
+			.dropdown .dropbtn {
+				cursor: pointer;
+				font-size: 16px;  
+				border: none;
+				outline: none;
+				color: white;
+				padding: 14px 16px;
+				background-color: inherit;
+				font-family: inherit;
+				margin: 0;
+			}
+
+			.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+				background-color: red;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+			}
+
+			.dropdown-content a {
+				float: none;
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+
+			.dropdown-content a:hover {
+				background-color: #ddd;
+			}
+
+			.show {
+				display: block;
+			}
+			
+			.fit {  /* set relative picture size */
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.center {
+				display: block;
+				margin: auto;
+			}
+	</style>
+
+	<body>
+		<nav><ul>
+			<li><a href="/" target="_self">Home</a></li>	        	        	
+		</ul></nav>
+	
+		<div><p>
+			Select High Contrast, or Standard (STD) Contrast for the webpage.
+		</div></p>
+		
+		<div class="btn-group">
+			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
+			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
+		</div>
+		<br><br><br>
+		
+		<script> HIDING THIS CODE:
+			<div class="btn-group">
+				<button type="button" onclick="location.href='devops';" class="btn btn-primary">DEV OPS</button>
+				<div class="dropdown">
+					<button class="dropbtn">PROTOTYPES and RESEARCH</button>
+					<div class="dropdown-content">
+						<h5 class="dropdown-header">Research</h5>
+						<li><a class="dropdown-item" href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a></li>
+						<li><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a></li>
+						<li><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a></li>
+						<h5 class="dropdown-header">Computer Vision (CV)</h5>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a></li>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
+					</div>
+				</div>
+			</div>
+						
+		<div class="btn-group">
+			<verticleButton onclick="location.href='portfolio';">SOFTWARE DEVELOPMENT PORTFOLIO</button>
+			<verticleButton onclick="location.href='devops';">DEV OPS / WHITE PAPERS</button>
+			<div class="dropdown">
+				<verticleButton>PROTOTYPES and RESEARCH</button>
+					<div class="dropdown-content">
+						<h5 class="dropdown-header">Research</h5>
+						<li><a class="dropdown-item" href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a></li>
+						<li><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a></li>
+						<li><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a></li>
+						<h5 class="dropdown-header">Computer Vision (CV)</h5>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a></li>
+						<li><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></li>
+					</div>
+			</div>
+		</div>
+		</script>
+				
+		<div class="navbar">
+			<a href="portfolio">SOFTWARE DEVELOPMENT PORTFOLIO</a>
+			<a href="devops">DEV OPS / WHITE PAPERS</a>
+			<div class="dropdown">
+				<button class="dropbtn" onclick="myFunction_Dropdown()">PROTOTYPES / RESEARCH
+					<i class="fa fa-caret-down"></i>
+				</button>
+		
+				<div class="dropdown-content" id="myDropdown">
+					<h5 class="dropdown-header">RESEARCH</h5>
+						<a href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a>
+						<a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a>
+						<a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a>
+					<h5 class="dropdown-header">COMPUTER VISION (CV)</h5>
+						<a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a>
+						<a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a>
+				</div>
+			</div> 
+		</div>
+
+		<script>
+			/* When the user clicks on the button, 
+			   toggle between hiding and showing the dropdown content */
+			function myFunction_Dropdown() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+				if (!e.target.matches('.dropbtn')) {
+					var myDropdown = document.getElementById("myDropdown");
+					if (myDropdown.classList.contains('show')) {
+						myDropdown.classList.remove('show');
+					}
+				}
+			}
+		</script>
+		
+		<script>
+			var gtech =  document.getElementById("gtech");
+			function setBG_Black() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
+				document.body.style.color = "yellow";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+			}
+			function setBG_White() {
+				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
+				document.body.style.color = "black";
+				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+			}
+		</script>
+	
+	</body>
+</html>
