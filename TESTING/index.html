@@ -115,12 +115,15 @@
 				margin: auto;
 			}
 			
-			.arrow-down {
-				width: 0;
-				height: 0;
-				border-left: 10px solid transparent;
-				border-right: 10px solid transparent;
-			}
+			.caret {
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border: 10px solid transparent;
+    }
+    .caret.down{
+        border-top-color: black;
+    }
 	</style>
 
 	<body>
@@ -179,7 +182,7 @@
 			<div class="dropdown">
 				<button class="dropbtn" onclick="myFunction_Dropdown()">PROTOTYPES / RESEARCH
 					<!-- <i class="fa fa-caret-down"></i> <-->
-					<i class="arrow-down"</i>
+					<i class="caret down"</i>
 				</button>
 		
 				<div class="dropdown-content" id="myDropdown">
