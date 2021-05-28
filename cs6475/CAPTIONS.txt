@@ -1,0 +1,30 @@
+FINAL PROJECT: PHASE 1
+
+My goal for the final project was to implement what we’ve learned in Assignments:11, 06 and 07 to create a novel video. I broke the project into two phases.
+
+For Phase 1, I wanted to keep the scope succinct, to make certain that  I could deliver something. For this phase, the goal was to replace a boring office scene that I used to create a video texture for assignment 11 with something more scenic. I started with the idea to mask out the office scene by detecting the moving car and using that as the 'white' image (correlates with the 'white' portion of the mask). My first video used a street scene as the 'black' image, and the generated mask(s) and 'white' image(s) to create the novel video. To create the final gif, I used GIMP to resize and relocate the Cartoon gif. I blended the images using the same code.
+
+Final gif (above) of street scene blended with cartoon gif and moving car.
+
+Above from left: Video texture created from MP4, Identify car in video texture, Create mask of car in video texture.
+
+Above from left: MP4 video clip, Gif of moving car blended with street scene, Cartoon gif.
+
+
+FINAL PROJECT: PHASE 2
+
+For Phase 2, I wanted to expand on the work done in Phase 1. My goal was to code the manual parts of Phase 1. Since I was saving time by automating the manual processes, I also wanted to create a more complex video for Phase 2.
+
+To create the final gifs, I used a code based approach to auto-size, auto-detect images in frames; generating masks and 'white' images for blending. The output (a gif like the doorway + lightening) became the input for creating a novel gif. This approach was used recursively four times to create the final gif of the disappearing car.
+
+Final gif (above) with blending, template matching and auto mask sizing. The gif was created using a smaller 'white' mask area (car) to improve the blend at the edges of the car. Using a smaller area for the 'white' mask to improve blending was found through experimentation.
+
+Above: Final gifs with blending, template matching and auto mask sizing. The gif on the left uses a smaller 'white' mask area to improve the blend at the edges. Using a smaller area for the 'white' mask was found through experimentation.
+
+Above from Left: Lightening gif, Doorway gif, Open doorway detected, Open doorway blended with lightening.
+
+Above from Left: Doorway + lightening blended with street scene, Disappearing car. After some experimentation, these gifs would eventually comprise the final gif.
+
+Above, X experiments: The gif on the left was marked with 'X's about both the car and buildings. The car in this image is associated with the 'white' area of the mask, every thing else, including the buildings with the 'black' area. Thus, the buildings would get masked out of the output gif and essentially replaced with the street scene from the gif with the doorway and lightening (see gif above left). The gif on the right is the output, a blend of gif on the left with the gif of the street scene + doorway + lightening (above left). As expected only the 'X's near the car appear in the output.
+
+Above, Blending experiments: The gif on the left is blended with a 'white' mask area that is the same shape as the 'white' image (car). The gif on the right is blended with a slightly smaller area for the 'white' mask, by seven pixels on both axis [h, w]. This small reduction of the 'white' mask relative to the 'white' image appears to have improved the blending at the edges of the car, while not masking out too much. Notice that some of the front tire in the blended image is masked out by using a smaller 'white' mask area. Using a 'white' mask that was much smaller (~15 pixels, [h, w]) would mask out too much of the 'white' image.
