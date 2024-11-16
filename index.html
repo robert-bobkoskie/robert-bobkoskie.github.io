@@ -1,196 +1,28 @@
-<html>
-	<head>
-		<img id ="gtech" class="center fit" style="width:500px;height:101px" src="images\gtech.png">
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<br><br>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Modernized Page</title><link rel="stylesheet" type="text/css" href="/css/main.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head><body><header><img id="gtech" class="center fit" src="images/gtech.png" alt="GTech Logo"></header><nav><ul><li><a href="/" target="_self">Home</a></li></ul></nav><main><div><p>Select High Contrast, or Standard (STD) Contrast for the webpage.</p></div><div class="btn-group"><button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button><button type="button" onclick="setBG_White()" class="btn btn-primary">STD CONTRAST</button></div><div class="navbar"><a href="portfolio">SOFTWARE DEVELOPMENT PORTFOLIO</a><a href="devops">DEV OPS / WHITE PAPERS</a><div class="dropdown"><button class="dropbtn" onclick="myFunction_Dropdown()">PROTOTYPES / RESEARCH
+                    <i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><h5 class="dropdown-header">RESEARCH</h5><a href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a><a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a><a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a><h5 class="dropdown-header">COMPUTER VISION (CV)</h5><a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7" title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a><a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA" title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a></div></div></div></main><footer><ul><li><a href="/">Home</a></li></ul></footer><script>
+        function myFunction_Dropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-	<style>
-			div { 
-				text-align: justify; 
-				text-justify: inter-word; 
-			}
-			
-			.btn-group button {
-				background-color: #4CAF50; /* Green background */
-				border: 1px solid green; /* Green border */
-				color: white; /* White text */
-				font-weight: bold;
-				font-size: 18px;
-				padding: 10px 24px; /* Some padding */
-				cursor: pointer; /* Pointer/hand icon */
-				float: left; /* Float the buttons side by side */
-			}
-			
-			/* Clear floats (clearfix hack) */
-			.btn-group button:after {
-				content: "";
-				clear: both;
-				display: inline-block:
-			}
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
 
-			.btn-group button:not(:last-child) {
-				border-right: none; /* Prevent double borders */
-			}
+        function setBG_Black() {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "yellow";
+            document.getElementById("gtech").src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
+        }
 
-			/* Add a background color on hover */
-			.btn-group button:hover {
-				background-color: #3e8e41;
-			}
-			
-			.navbar {
-				display: inline-block:
-				overflow: hidden;
-				background-color: #4CAF50; /* Green background */
-				font-family: Arial, Helvetica, sans-serif;
-			}
-
-			.navbar a {
-				float: left;
-				font-size: 16px;
-				font-weight: bold;
-				background-color: #4CAF50; /* Green background */
-				border: 1px solid green; /* Green border */
-				color: white; /* White text */
-				text-align: center;
-				padding: 14px 16px;
-				text-decoration: none;
-			}
-
-			.dropdown {
-				float: left;
-				overflow: hidden;
-			}
-
-			.dropdown .dropbtn {
-				cursor: pointer;
-				font-size: 16px;  
-				border: none;
-				outline: none;
-				color: yellow;
-				padding: 14px 16px;
-				/* background-color: inherit; */
-				background-color: #4CAF50; /* Green background */
-				border: 1px solid green; /* Green border */
-				color: white; /* White text */
-				font-family: inherit;
-				margin: 0;
-			}
-
-			.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-				background-color: red;
-			}
-
-			.dropdown-content {
-				display: none;
-				position: absolute;
-				/* background-color: #f9f9f9; */
-				background-color: black;
-				color: orange;
-				min-width: 160px;
-				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-				z-index: 1;
-			}
-
-			.dropdown-content a {
-				float: none;
-				background-color: green;
-				color: white;
-				padding: 12px 16px;
-				text-decoration: none;
-				display: block;
-				text-align: left;
-			}
-
-			.dropdown-content a:hover {
-				background-color: #ddd;
-			}
-
-			.show {
-				display: block;
-			}
-			
-			.fit {  /* set relative picture size */
-				max-width: 100%;
-				max-height: 100%;
-			}
-
-			.center {
-				display: block;
-				margin: auto;
-			}			
-	</style>
-
-	<body>
-		<nav><ul>
-			<li><a href="/" target="_self">Home</a></li>	        	        	
-		</ul></nav>
+        function setBG_White() {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.getElementById("gtech").src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
+        }
+    </script></body></html>
 	
-		<div><p>
-			Select High Contrast, or Standard (STD) Contrast for the webpage.
-		</div></p>
-		
-		<div class="btn-group">
-			<button type="button" onclick="setBG_Black()" class="btn btn-primary">HIGH CONTRAST</button>
-			<button type="button" onclick="setBG_White()" class="btn btn-primary">STD  CONTRAST</button>
-		</div>
-		<br><br><br>
-						
-		<div class="navbar">
-			<a href="portfolio">SOFTWARE DEVELOPMENT PORTFOLIO</a>
-			<a href="devops">DEV OPS / WHITE PAPERS</a>
-			<div class="dropdown">
-				<button class="dropbtn" onclick="myFunction_Dropdown()">PROTOTYPES / RESEARCH
-					<i class="fa fa-caret-down"></i>
-				</button>
-		
-				<div class="dropdown-content" id="myDropdown">
-					<h5 class="dropdown-header">RESEARCH</h5>
-						<a href="/cs7646" title="Machine Learning (ML)">Machine Learning (ML)</a>
-						<a class="dropdown-item" href="/cs6238" title="Secure Computer Systems (SCI)">Secure Computer Systems (SCI)</a>
-						<a class="dropdown-item" href="/cs6750" title="Human Computer Interaction (HCI)">Human-Computer Interaction (HCI)</a>
-					<h5 class="dropdown-header">COMPUTER VISION (CV)</h5>
-						<a class="dropdown-item" href="https://goo.gl/photos/KEpwD9mZ3EBcycQk7"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-1</a>
-						<a class="dropdown-item" href="https://goo.gl/photos/Hv9WaPvd4QrQJ9TZA"title="Computer Vision (CV) Prototype" target="_blank">CV Prototype-2</a>
-				</div>
-			</div> 
-		</div>
-
-		<script>
-			/* When the user clicks on the button, 
-			   toggle between hiding and showing the dropdown content */
-			function myFunction_Dropdown() {
-				document.getElementById("myDropdown").classList.toggle("show");
-			}
-
-			// Close the dropdown if the user clicks outside of it
-			window.onclick = function(e) {
-				if (!e.target.matches('.dropbtn')) {
-					var myDropdown = document.getElementById("myDropdown");
-					if (myDropdown.classList.contains('show')) {
-						myDropdown.classList.remove('show');
-					}
-				}
-			}
-		</script>
-		
-		<script>
-			var gtech =  document.getElementById("gtech");
-			function setBG_Black() {
-				document.getElementsByTagName("BODY")[0].style.backgroundColor = "black";
-				document.body.style.color = "yellow";
-				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech_HCS.png";
-			}
-			function setBG_White() {
-				document.getElementsByTagName("BODY")[0].style.backgroundColor = "white";
-				document.body.style.color = "black";
-				gtech.src = "https://robert-bobkoskie.github.io/cs6460/images/gtech.png";
-			}
-		</script>
-	
-	</body>
-</html>
